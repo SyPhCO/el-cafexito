@@ -1,0 +1,14 @@
+<div class="tab-pane fade pagination-link " id="contact-{{ product.id }}" role="tabpanel" aria-labelledby="contact-tab">
+	<div class="comments-list row justify-content-center ">
+		{% for comments in commentsByProduct %}
+			{% if (comments[0] == product.id) %}
+				{% for comment in comments[1] %}
+				<div class="com col-3 m-4 p-2 " id="style-7">
+						<h6 class="text-center text-capitalize p-2">{{comment[1].author}}</h6>
+						<p class="text-justify pl-3 pr-3"> {{comment[1].comment}} </p>
+				</div>		
+				{% endfor %}
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>

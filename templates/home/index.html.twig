@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+{% block carousel %}{% endblock %}
+
+{% block content %}
+
+	<div class="row acceuilStart">
+		<h1 class="text-center col-md-12">Produits a la Une !</h1>
+		{% for product in products %}
+			<div class="col-md-4 mt-5 ">
+				{% include 'product/single_product.html.twig' %}
+			</div>
+		{% endfor %}
+	</div>
+
+	<hr class="featurette-divider">
+
+	<div class="row featurette">
+		<div class="col-md-7">
+			<h2 class="featurette-heading">Fabien.<br>
+				<span class="text-muted">Dirigeant</span>
+			</h2>
+			<p class="lead">Je suis en lien direct avec un petit producteur local de ma famille qui cultive le café depuis des générations.</p>
+			<a href="{{path('app_team')}}" class="btn btn-info text-center font-weight-bold mt-2 mb-3">Plus d'infos ?</a>
+		</div>
+		<div class="col-md-5 ">
+			<img class=" bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded" width="500" height="500" src="./assets/images/profilTeam.jpg" preserveaspectratio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"></img>
+	    </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">El Cauca<br>
+                <span class="text-muted">Colombie</span>
+            </h2>
+            <p class="lead">Le département de Cauca est situé au sud-ouest de la Colombie.C’est la région montagneuse où l’importante rivière Cauca prend naissance...</p>
+            <a href="#" class="btn btn-info text-center font-weight-bold mt-2 mb-3">Découvrez en plus</a>
+        </div>
+        <div class="col-md-5 order-md-1">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="./assets/images/escudo.png" preserveaspectratio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"></img>
+        </div>
+    </div>
+    
+    <hr class="featurette-divider">
+    {% endblock %}

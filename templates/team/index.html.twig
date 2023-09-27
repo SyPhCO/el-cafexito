@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+{% block title %}Qui sommes nous{% endblock %}
+{% block content %}
+  {% for team in teams %}
+    <div class="row featurette mt-5 justify-content-center">
+        <div class="col-md-12">
+            <h2 class="featurette-heading">{{ team.name }}<br> <span class="text-muted">{{ team.role }}</span></h2>
+            
+								<div class="gallery-item ">
+									<img src="/uploads/{{ team.illustration }}" class="mb-2 zoom w-25" alt="test" >
+								</div>
+
+                <p class="lead">{{ team.description }}</p>
+            </div>
+                        <div class="container cont-gallery" id="#gallery">
+							<div class="gallery">
+
+								<div class="gallery-item ">
+									<img src="/uploads/{{ team.gallery }}" class="mb-2 zoom" alt="test" width="300px" height="300px">
+								</div>
+							</div>
+
+							<div class="gallery">
+								<div class="gallery-item">
+									<img src="/uploads/{{ team.gallery2 }}" class="mb-2 zoom" alt="test2" width="300px" height="300px">
+								</div>
+							</div>
+
+							<div class="gallery">
+								<div class="gallery-item">
+									<img src="/uploads/{{ team.gallery3 }}" class="mb-2 zoom" alt="test3" width="300px" height="300px">
+								</div>
+							</div>
+
+						<div class="modal">
+							<span class="close">&times;</span>
+							<img class="modal-content" src="" alt="">
+						</div>
+					</div>
+        </div>
+                    <hr class="featurette-divider">      
+    </div>					
+    {% endfor %}   
+{% endblock %}

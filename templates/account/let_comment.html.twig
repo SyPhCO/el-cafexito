@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commentaire - El cafexito{% endblock %}
+
+{% block content %}
+    <h1 class="text-center p-5">Laissez votre commentaire</h1>
+
+
+    <hr>
+{% if notification %}
+<div class="alert alert-info">{{ notification }} </div>
+{% endif %}
+    {{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-6">{{form_row(form.author)}}</div>
+            <div class="col-md-6">{{form_row(form.activity)}} </div>
+            <div class="col-md-12">{{form_row(form.comment)}}</div>
+            <div class="col-md-6 m-auto">{{form_row(form.submit)}}
+            <small>*Attention si le commentaire n'est pas associé au bon produit il ne pourra être publié</small>
+            </div>
+        </div>
+    {{ form_end(form) }} 
+    
+       <a href="{{ path('app_account') }}" class="btn btn-danger btn-sm">Retour</a>
+{% endblock %}
