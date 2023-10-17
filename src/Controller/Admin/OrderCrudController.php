@@ -89,7 +89,7 @@ class OrderCrudController extends AbstractCrudController
             MoneyField::new('total', 'Total produit')->setCurrency('EUR'),
             TextField::new('carrierName', 'mode de livraison'),
             MoneyField::new('carrierPrice', 'Frais de port')->setCurrency('EUR'),
-            ChoiceField::new('state')->setChoices([
+            ChoiceField::new('state', 'statut')->setChoices([
                 'Non payée' => 0,
                 'Payée' => 1,
                 'Preparation en cours' => 2,

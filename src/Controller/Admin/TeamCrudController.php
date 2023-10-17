@@ -30,7 +30,6 @@ class TeamCrudController extends AbstractCrudController
             ->setUploadedFileNamePattern('[randomhash].[extension]')
             ->setRequired(false), 
             TextEditorField::new('description'),
-            BooleanField::new('header'),
             imageField::new('gallery')
             ->setBasePath('uploads/')
             ->setUploadDir('public/uploads')

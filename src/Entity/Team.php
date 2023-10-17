@@ -23,9 +23,6 @@ class Team
     #[ORM\Column(length: 255)]
     private ?string $illustration = null;
 
-    #[ORM\Column]
-    private ?bool $header = null;
-
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
@@ -85,17 +82,6 @@ class Team
         return $this;
     }
 
-    public function isHeader(): ?bool
-    {
-        return $this->header;
-    }
-
-    public function setHeader(bool $header): self
-    {
-        $this->header = $header;
-
-        return $this;
-    }
 
     public function getSlug(): ?string
     {

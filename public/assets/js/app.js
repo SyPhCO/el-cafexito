@@ -14,24 +14,24 @@ closeModal.addEventListener("click", () => {
   modal.style.display = "none";
 });
 
-function changePage(idProduct, index) {
+// function changePage(idProduct, index) {
   // alert(index);
 
-  $.ajax({
-    url: '/updateCommentPageByProduct/' + idProduct + '/' + index, // L'URL de votre route Symfony
-    method: 'GET',
-    dataType: 'json',
-    success: function(response) {
-      console.log(response[0])
-        // Traitement de la réponse
-        console.log(response.message);
-    },
-    error: function(error) {
-      alert("error")
-        console.error('Une erreur s\'est produite', error);
-    }
-});
-};
+//   $.ajax({
+//     url: '/updateCommentPageByProduct/' + idProduct + '/' + index, // L'URL de votre route Symfony
+//     method: 'GET',
+//     dataType: 'json',
+//     success: function(response) {
+//       console.log(response[0])
+//         // Traitement de la réponse
+//         console.log(response.message);
+//     },
+//     error: function(error) {
+//       alert("error")
+//         console.error('Une erreur s\'est produite', error);
+//     }
+// });
+// };
 
 $(document).ready(function(){
   $(".fancybox").fancybox({

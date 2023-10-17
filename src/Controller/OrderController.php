@@ -67,7 +67,6 @@ public function __construct(EntityManagerInterface $entityManager)
             $delivery_content .= '<br>'.$delivery->getPostal().''.$delivery->getCity();  
             $delivery_content .= '<br>'.$delivery->getCountry();  
 
-            // enregistrer ma commande Order()
             $order = new Order();
             $reference = $date->format('dnY').'-'.uniqid();
             $order->setReference($reference);

@@ -27,6 +27,7 @@ h1{
 
  .navbar-brand:hover, .nav-link:hover, .navbar-item-custom a:hover{
     color: #FFCD00 !important;
+
 }
 .navbar-item-custom, .navbar-item-custom a {
     color: #fff;
