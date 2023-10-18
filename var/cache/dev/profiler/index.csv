@@ -1198,3 +1198,8 @@ cce85d,127.0.0.1,POST,http://127.0.0.1:8000/commande/recapitulatif,1697638243,,2
 d55ffb,127.0.0.1,GET,http://127.0.0.1:8000/commande/create-session/18102023-652fe76370233,1697638246,,302
 3f13fd,127.0.0.1,GET,http://127.0.0.1:8000/commande/merci/cs_test_b1GckUP9HXX0BFCLm110sq0JVswOL7RbNbrAKCJo4e7N5dPTtJhOw3yJDC,1697638277,,200
 797d05,127.0.0.1,GET,http://127.0.0.1:8000/compte,1697638280,,200
+a4b799,127.0.0.1,GET,http://127.0.0.1:8000/commentaires,1697652331,,200
+e8edb1,127.0.0.1,GET,http://127.0.0.1:8000/uploads/,1697652332,f788c4,404
+f788c4,127.0.0.1,GET,http://127.0.0.1:8000/uploads/,1697652332,,404
+996861,127.0.0.1,GET,http://127.0.0.1:8000/Nos-produits,1697652339,,200
+749dd5,127.0.0.1,GET,http://127.0.0.1:8000/Produit/black-gold-m,1697652409,,200
