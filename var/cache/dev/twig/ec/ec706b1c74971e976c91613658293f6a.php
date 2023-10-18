@@ -112,7 +112,7 @@ class __TwigTemplate_cc5c287e2fd04c123f8dbff16c1dd6bd extends Template
             echo "\">
 \t\t\t\t\t\t<img src=\"";
             // line 36
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/cart4.svg"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/cart9.png"), "html", null, true);
             echo "\" alt=\"Mon panier\" class=\"cart-icon mr-3\">
 \t\t\t\t\t</a>
 \t\t\t\t";
@@ -194,7 +194,7 @@ class __TwigTemplate_cc5c287e2fd04c123f8dbff16c1dd6bd extends Template
 \t\t\t\t\t|
 \t\t\t\t\t<a href=\"{{ path('app_logout')}}\">Déconnexion</a>
 \t\t\t\t\t<a href=\"{{ path('app_cart') }}\">
-\t\t\t\t\t\t<img src=\"{{ asset('assets/images/cart4.svg')}}\" alt=\"Mon panier\" class=\"cart-icon mr-3\">
+\t\t\t\t\t\t<img src=\"{{ asset('assets/images/cart9.png')}}\" alt=\"Mon panier\" class=\"cart-icon mr-3\">
 \t\t\t\t\t</a>
 \t\t\t\t{% else %}
 \t\t\t\t\t<a href=\"{{ path('app_login')}}\">Connexion</a>

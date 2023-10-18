@@ -15,11 +15,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class StripeController extends AbstractController
 {
 
-    
-
     #[Route('/commande/create-session/{reference}', name: 'app_stripe_create_session')]
     public function index(EntityManagerInterface $entityManager, Cart $cart, $reference): Response{
-        
         
         $products_for_stripe = [];
         $YOUR_DOMAIN = 'http://127.0.0.1:8000';

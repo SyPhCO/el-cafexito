@@ -102,7 +102,7 @@ class __TwigTemplate_610f02e19b6aa6b261be079ef08e24a0 extends Template
 <hr>
 
 <div class=\"row justify-content-center\">
-    <a class=\"col-md-2 bg-info bg-gradient p-3 mt-2 mr-2 mb-2 font-weight-bold text-center rounded\" href=\"";
+    <a class=\"col-md-2 bg-info bg-gradient p-3 m-2 font-weight-bold text-center rounded\" href=\"";
         // line 16
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_account_password");
         echo "\">
@@ -138,7 +138,7 @@ class __TwigTemplate_610f02e19b6aa6b261be079ef08e24a0 extends Template
             <span class=\"text-light\">Mes commandes</span>
         </div>
     </a>
-        <a class=\"col-md-2 bg-info bg-gradient p-3 mt-2 ml-2 mb-2 font-weight-bold  text-center rounded\"  href=\"";
+        <a class=\"col-md-2 bg-info bg-gradient p-3 m-2 font-weight-bold  text-center rounded\"  href=\"";
         // line 34
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_let_comment");
         echo "\" >
@@ -193,7 +193,7 @@ Bienvenue dans votre espace personnel <strong class=\"text-uppercase \"> {{ app.
 <hr>
 
 <div class=\"row justify-content-center\">
-    <a class=\"col-md-2 bg-info bg-gradient p-3 mt-2 mr-2 mb-2 font-weight-bold text-center rounded\" href=\"{{ path('app_account_password')}}\">
+    <a class=\"col-md-2 bg-info bg-gradient p-3 m-2 font-weight-bold text-center rounded\" href=\"{{ path('app_account_password')}}\">
         <div class=\"account-item \">
             <img src=\"{{ asset('assets/images/icons8.png') }}\" alt=\"Modifier mon mot de passe\" ><br>
             <span  class=\" text-light\">Modifier mon mot de passe</span>
@@ -211,7 +211,7 @@ Bienvenue dans votre espace personnel <strong class=\"text-uppercase \"> {{ app.
             <span class=\"text-light\">Mes commandes</span>
         </div>
     </a>
-        <a class=\"col-md-2 bg-info bg-gradient p-3 mt-2 ml-2 mb-2 font-weight-bold  text-center rounded\"  href=\"{{ path('app_let_comment')}}\" >
+        <a class=\"col-md-2 bg-info bg-gradient p-3 m-2 font-weight-bold  text-center rounded\"  href=\"{{ path('app_let_comment')}}\" >
         <div class=\"account-item\">
             <img src=\"{{ asset('assets/images/iconComment.png') }}\" alt=\"mes commentaires\"><br>
             <span class=\"text-light\">Laissez-nous un commentaire</span>

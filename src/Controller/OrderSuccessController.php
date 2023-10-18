@@ -28,9 +28,9 @@ class OrderSuccessController extends AbstractController
              $order->setState(1);
              $entityManager->flush();
 
-             $mail = new Mail();
-             $content = "Bonjour".$order->getUser()->getFirstname()."<br/>Votre commande a bien été passé, merci de votre confiance je la traiterai dans les plus bref délais.<br/> Fabien";
-             $mail->send($order->getUser()->getEmail(), $order->getUser()->getFirstname(), 'Votre commande sur El Cafexito est bien validée', $content);
+            //  $mail = new Mail();
+            //  $content = "Bonjour".$order->getUser()->getFirstname()."<br/>Votre commande a bien été passé, merci de votre confiance je la traiterai dans les plus bref délais.<br/> Fabien";
+            //  $mail->send($order->getUser()->getEmail(), $order->getUser()->getFirstname(), 'Votre commande sur El Cafexito est bien validée', $content);
 
 
         return $this->render('order_success/index.html.twig', [
