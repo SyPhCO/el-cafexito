@@ -20,6 +20,9 @@ class Comments
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $comment = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $illustration = null;
+
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
@@ -69,6 +72,19 @@ class Comments
     {
         return $this->createdAt;
     }
+
+    public function getIllustration(): ?string
+    {
+        return $this->illustration;
+    }
+
+    public function setIllustration(string $illustration): self
+    {
+        $this->illustration = $illustration;
+
+        return $this;
+    }
+
 
     public function setCreatedAt(\DateTimeImmutable $createdAt): self
     {

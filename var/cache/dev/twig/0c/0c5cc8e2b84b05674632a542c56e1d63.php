@@ -45,7 +45,7 @@ class __TwigTemplate_6c7e181cbaebba9fa578fe3e8488bbea extends Template
 \t</div>
 \t<a href=\"#\" class=\"mr-5 text-light\">mentions légales</a>
 </small>
-<a href=\"#\" class=\"float-right ml-5 text-light\">Back to top</a></footer>
+<a href=\"#\" class=\"float-right ml-5 text-light\">Haut de page</a></footer>
 ";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -72,7 +72,7 @@ class __TwigTemplate_6c7e181cbaebba9fa578fe3e8488bbea extends Template
 \t</div>
 \t<a href=\"#\" class=\"mr-5 text-light\">mentions légales</a>
 </small>
-<a href=\"#\" class=\"float-right ml-5 text-light\">Back to top</a></footer>
+<a href=\"#\" class=\"float-right ml-5 text-light\">Haut de page</a></footer>
 ", "./components/_footer.html.twig", "C:\\wamp64\\www\\el-cafexito\\templates\\components\\_footer.html.twig");
     }
 }

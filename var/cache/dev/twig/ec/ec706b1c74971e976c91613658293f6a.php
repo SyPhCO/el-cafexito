@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* ./components/_navbar.html.twig */
+/* components/_navbar.html.twig */
 class __TwigTemplate_cc5c287e2fd04c123f8dbff16c1dd6bd extends Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_cc5c287e2fd04c123f8dbff16c1dd6bd extends Template
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "./components/_navbar.html.twig"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "components/_navbar.html.twig"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "./components/_navbar.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "components/_navbar.html.twig"));
 
         // line 1
         echo "<header class=\"pb-5\">
@@ -88,47 +88,66 @@ class __TwigTemplate_cc5c287e2fd04c123f8dbff16c1dd6bd extends Template
         echo "\">Contact</a>
 \t\t\t\t</li>
 \t\t\t</ul>
-\t\t\t<div class=\"navbar-item-custom\">
-\t\t\t\t";
+\t\t\t";
         // line 29
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 29, $this->source); })()), "user", [], "any", false, false, false, 29)) {
-            // line 30
+        echo "\t\t  ";
+        // line 34
+        echo "  <div class=\"switch\">
+    <input type=\"checkbox\" onchange=\"changeValues()\"  id=\"themeSwitch\">
+    <label for=\"themeSwitch\">
+        <img src=\"";
+        // line 37
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/sun.png"), "html", null, true);
+        echo "\" alt=\"Soleil\" class=\"icon\" id=\"sunIcon\">
+        <img src=\"";
+        // line 38
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/moon.png"), "html", null, true);
+        echo "\" alt=\"Lune\" class=\"icon\" id=\"moonIcon\">
+    </label>
+</div>
+\t\t";
+        // line 42
+        echo "\t\t\t<div class=\"navbar-item-custom\">
+\t\t\t\t";
+        // line 43
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 43, $this->source); })()), "user", [], "any", false, false, false, 43)) {
+            // line 44
             echo "\t\t\t\t\t<a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_account");
             echo "\">Mon compte
 \t\t\t\t\t\t<small>(";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 31, $this->source); })()), "user", [], "any", false, false, false, 31), "firstname", [], "any", false, false, false, 31), "html", null, true);
+            // line 45
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 45, $this->source); })()), "user", [], "any", false, false, false, 45), "firstname", [], "any", false, false, false, 45), "html", null, true);
             echo ")</small>
 \t\t\t\t\t</a>
 \t\t\t\t\t|
 \t\t\t\t\t<a href=\"";
-            // line 34
+            // line 48
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Déconnexion</a>
 \t\t\t\t\t<a href=\"";
-            // line 35
+            // line 49
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_cart");
             echo "\">
 \t\t\t\t\t\t<img src=\"";
-            // line 36
+            // line 50
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/cart9.png"), "html", null, true);
             echo "\" alt=\"Mon panier\" class=\"cart-icon mr-3\">
 \t\t\t\t\t</a>
 \t\t\t\t";
         } else {
-            // line 39
+            // line 53
             echo "\t\t\t\t\t<a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">Connexion</a>
 \t\t\t\t\t|
 \t\t\t\t\t<a href=\"";
-            // line 41
+            // line 55
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
             echo "\">Inscription</a>
 \t\t\t\t";
         }
-        // line 43
+        // line 57
         echo "\t\t\t</div>
 \t\t</div>
 \t</nav>
@@ -144,7 +163,7 @@ class __TwigTemplate_cc5c287e2fd04c123f8dbff16c1dd6bd extends Template
 
     public function getTemplateName()
     {
-        return "./components/_navbar.html.twig";
+        return "components/_navbar.html.twig";
     }
 
     public function isTraitable()
@@ -154,7 +173,7 @@ class __TwigTemplate_cc5c287e2fd04c123f8dbff16c1dd6bd extends Template
 
     public function getDebugInfo()
     {
-        return array (  132 => 43,  127 => 41,  121 => 39,  115 => 36,  111 => 35,  107 => 34,  101 => 31,  96 => 30,  94 => 29,  87 => 25,  81 => 22,  75 => 19,  68 => 15,  62 => 12,  51 => 4,  47 => 3,  43 => 1,);
+        return array (  151 => 57,  146 => 55,  140 => 53,  134 => 50,  130 => 49,  126 => 48,  120 => 45,  115 => 44,  113 => 43,  110 => 42,  104 => 38,  100 => 37,  95 => 34,  93 => 29,  87 => 25,  81 => 22,  75 => 19,  68 => 15,  62 => 12,  51 => 4,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -186,6 +205,20 @@ class __TwigTemplate_cc5c287e2fd04c123f8dbff16c1dd6bd extends Template
 \t\t\t\t\t<a class=\"nav-link\" href=\"{{path('app_contact')}}\">Contact</a>
 \t\t\t\t</li>
 \t\t\t</ul>
+\t\t\t{# new #}
+\t\t  {# <h1>Thème</h1>
+  <label class=\"switch\">
+    <input type=\"checkbox\" onchange=\"changeValues()\"  id=\"themeSwitch\">
+    <span class=\"slider\"></span>
+  </label> #}
+  <div class=\"switch\">
+    <input type=\"checkbox\" onchange=\"changeValues()\"  id=\"themeSwitch\">
+    <label for=\"themeSwitch\">
+        <img src=\"{{ asset('assets/images/sun.png')}}\" alt=\"Soleil\" class=\"icon\" id=\"sunIcon\">
+        <img src=\"{{ asset('assets/images/moon.png')}}\" alt=\"Lune\" class=\"icon\" id=\"moonIcon\">
+    </label>
+</div>
+\t\t{# new #}
 \t\t\t<div class=\"navbar-item-custom\">
 \t\t\t\t{% if app.user %}
 \t\t\t\t\t<a href=\"{{ path('app_account')}}\">Mon compte
@@ -205,6 +238,6 @@ class __TwigTemplate_cc5c287e2fd04c123f8dbff16c1dd6bd extends Template
 \t\t</div>
 \t</nav>
 </header>
-", "./components/_navbar.html.twig", "C:\\wamp64\\www\\el-cafexito\\templates\\components\\_navbar.html.twig");
+", "components/_navbar.html.twig", "C:\\wamp64\\www\\el-cafexito\\templates\\components\\_navbar.html.twig");
     }
 }

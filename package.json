@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "postcss": "^8.4.31"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.3.5"
+  }
+}

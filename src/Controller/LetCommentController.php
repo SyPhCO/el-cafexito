@@ -34,20 +34,20 @@ class LetCommentController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            // $picture = $form->get('illustration')->getData();
-            // $originalFilename = pathinfo($picture->getClientOriginalName(), PATHINFO_FILENAME);
-            // $safeFilename = $slugger->slug($originalFilename);
-            // $newFilename = $safeFilename . '-' . uniqid() . '.' . $picture->guessExtension();
+            $picture = $form->get('illustration')->getData();
+            $originalFilename = pathinfo($picture->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFilename = $slugger->slug($originalFilename);
+            $newFilename = $safeFilename . '-' . uniqid() . '.' . $picture->guessExtension();
 
-            // try {
-            //     $picture->move(
-            //         $this->getParameter('comments_directory'),
-            //         $newFilename
-            //     );
-            // } catch (FileException $e) {
-            // }
+            try {
+                $picture->move(
+                    $this->getParameter('comments_directory'),
+                    $newFilename
+                );
+            } catch (FileException $e) {
+            }
 
-            // $comments->setIllustration($newFilename);
+            $comments->setIllustration($newFilename);
             $comments = $form->getData(); 
             $comments->setCreatedAt(new DateTimeImmutable());
             $this->entityManager->persist($comments);

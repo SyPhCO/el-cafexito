@@ -1,6 +1,6 @@
 <div class="product-item text-center">
-    <a href="{{ path('app_product', { 'slug' : product.slug }) }}">
-        <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="figure-img img-fluid img-thumbnail max-width:200px"style="height:350px; width: 350px">
+    <a href="{{ path('app_product', { 'slug' : product.slug }) }}" >
+        <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="figure-img img-fluid img-thumbnail rounded-circle object-fit-cover"style="height:250px; width: 250px">
     </a>
     <h4>{{ product.name }}</h4>
     <span class="product-subtitle">{{ product.subtitle }}</span>

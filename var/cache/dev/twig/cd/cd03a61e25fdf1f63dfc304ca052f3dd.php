@@ -74,6 +74,8 @@ class __TwigTemplate_2f1478f284819b211fe784591c42c653 extends Template
         // line 19
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/carousel.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
+\t\t<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">
+
 \t\t<style>
 \t\t\t.bd-placeholder-img {
 \t\t\t\tfont-size: 1.125rem;
@@ -94,25 +96,25 @@ class __TwigTemplate_2f1478f284819b211fe784591c42c653 extends Template
 \t</head>
 \t<body class=\"backgroundColor\">
 \t\t";
-        // line 39
-        $this->loadTemplate("./components/_navbar.html.twig", "base.html.twig", 39)->display($context);
-        // line 40
+        // line 41
+        $this->loadTemplate("./components/_navbar.html.twig", "base.html.twig", 41)->display($context);
+        // line 42
         echo "
 
 \t\t<main role=\"main\">
 
 \t\t\t";
-        // line 44
+        // line 46
         if (        $this->hasBlock("carousel", $context, $blocks)) {
-            // line 45
+            // line 47
             echo "\t\t\t\t<div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">
 \t\t\t\t\t<ol class=\"carousel-indicators\">
 \t\t\t\t\t\t";
-            // line 47
+            // line 49
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["headers"]) || array_key_exists("headers", $context) ? $context["headers"] : (function () { throw new RuntimeError('Variable "headers" does not exist.', 47, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["headers"]) || array_key_exists("headers", $context) ? $context["headers"] : (function () { throw new RuntimeError('Variable "headers" does not exist.', 49, $this->source); })()));
             foreach ($context['_seq'] as $context["key"] => $context["header"]) {
-                // line 48
+                // line 50
                 echo "\t\t\t\t\t\t\t<li data-target=\"#myCarousel\" data-slide-to=\"";
                 echo twig_escape_filter($this->env, $context["key"], "html", null, true);
                 echo "\" ";
@@ -125,40 +127,40 @@ class __TwigTemplate_2f1478f284819b211fe784591c42c653 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['key'], $context['header'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 50
+            // line 52
             echo "
 \t\t\t\t\t</ol>
 \t\t\t\t\t<div class=\"carousel-inner\">
 \t\t\t\t\t\t";
-            // line 53
+            // line 55
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["headers"]) || array_key_exists("headers", $context) ? $context["headers"] : (function () { throw new RuntimeError('Variable "headers" does not exist.', 53, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["headers"]) || array_key_exists("headers", $context) ? $context["headers"] : (function () { throw new RuntimeError('Variable "headers" does not exist.', 55, $this->source); })()));
             foreach ($context['_seq'] as $context["key"] => $context["header"]) {
-                // line 54
+                // line 56
                 echo "\t\t\t\t\t\t\t<div class=\"carousel-item ";
                 if (($context["key"] == 0)) {
                     echo " active ";
                 }
                 echo " \" style=\"background: url('/uploads/";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "illustration", [], "any", false, false, false, 54), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "illustration", [], "any", false, false, false, 56), "html", null, true);
                 echo "'); background-size: cover;\">
 
 \t\t\t\t\t\t\t\t<div class=\"container\">
-\t\t\t\t\t\t\t\t\t<div class=\"carousel-caption text-left\">
-\t\t\t\t\t\t\t\t\t\t<h1>";
-                // line 58
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "title", [], "any", false, false, false, 58), "html", null, true);
-                echo "</h1>
+\t\t\t\t\t\t\t\t\t<div class=\"carousel-caption text-left acceuilH\">
+\t\t\t\t\t\t\t\t\t\t<h4 class=\"display-4\">";
+                // line 60
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "title", [], "any", false, false, false, 60), "html", null, true);
+                echo "</h4>
 \t\t\t\t\t\t\t\t\t\t<p>";
-                // line 59
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "content", [], "any", false, false, false, 59), "html", null, true);
+                // line 61
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "content", [], "any", false, false, false, 61), "html", null, true);
                 echo "</p>
 \t\t\t\t\t\t\t\t\t\t<p>
 \t\t\t\t\t\t\t\t\t\t\t<a class=\"btn btn-lg btn-info\" href=\"";
-                // line 61
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "btnUrl", [], "any", false, false, false, 61), "html", null, true);
+                // line 63
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "btnUrl", [], "any", false, false, false, 63), "html", null, true);
                 echo "\" role=\"button\">";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "btnTitle", [], "any", false, false, false, 61), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "btnTitle", [], "any", false, false, false, 63), "html", null, true);
                 echo "</a>
 \t\t\t\t\t\t\t\t\t\t</p>
 \t\t\t\t\t\t\t\t\t</div>
@@ -169,7 +171,7 @@ class __TwigTemplate_2f1478f284819b211fe784591c42c653 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['key'], $context['header'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 67
+            // line 69
             echo "\t\t\t\t\t</div>
 \t\t\t\t\t<a class=\"carousel-control-prev\" href=\"#myCarousel\" role=\"button\" data-slide=\"prev\">
 \t\t\t\t\t\t<span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
@@ -190,36 +192,42 @@ class __TwigTemplate_2f1478f284819b211fe784591c42c653 extends Template
 \t\t\t\t</div>
 \t\t\t";
         }
-        // line 86
+        // line 88
         echo "
 \t\t\t<div class=\"container marketing ";
-        // line 87
+        // line 89
         if ( !        $this->hasBlock("carousel", $context, $blocks)) {
             echo "mt-5";
         }
-        echo "\"> ";
-        $this->displayBlock('content', $context, $blocks);
-        // line 88
-        echo "
-\t\t\t\t</div>
-\t\t\t\t";
-        // line 90
-        $this->loadTemplate("./components/_footer.html.twig", "base.html.twig", 90)->display($context);
+        echo "\"> 
+
+\t\t\t";
         // line 91
+        $this->displayBlock('content', $context, $blocks);
+        // line 93
+        echo "\t\t\t\t";
+        $this->loadTemplate("./components/_social.html.twig", "base.html.twig", 93)->display($context);
+        // line 94
+        echo "\t\t\t\t</div>
+\t\t\t\t";
+        // line 95
+        $this->loadTemplate("./components/_footer.html.twig", "base.html.twig", 95)->display($context);
+        // line 96
         echo "
 \t\t\t</main>
 \t\t\t";
-        // line 94
+        // line 99
         echo "\t\t\t<script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
 \t\t\t<script src=\"";
-        // line 95
+        // line 100
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.bundle.js"), "html", null, true);
         echo "\"></script>
+\t\t\t<script src=\"https://unpkg.com/scrollreveal\"></script>
+\t\t\t<script src=\"//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js\"></script>
 \t\t\t<script src=\"";
-        // line 96
+        // line 103
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/app.js"), "html", null, true);
         echo "\"></script>
-\t\t\t<script src=\"//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js\"></script>
 \t\t</body>
 \t</html>
 ";
@@ -252,7 +260,7 @@ class __TwigTemplate_2f1478f284819b211fe784591c42c653 extends Template
 
     }
 
-    // line 87
+    // line 91
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -262,6 +270,8 @@ class __TwigTemplate_2f1478f284819b211fe784591c42c653 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
+        // line 92
+        echo "\t\t\t";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -282,7 +292,7 @@ class __TwigTemplate_2f1478f284819b211fe784591c42c653 extends Template
 
     public function getDebugInfo()
     {
-        return array (  256 => 87,  245 => 11,  235 => 10,  220 => 96,  216 => 95,  213 => 94,  209 => 91,  207 => 90,  203 => 88,  197 => 87,  194 => 86,  173 => 67,  159 => 61,  154 => 59,  150 => 58,  138 => 54,  134 => 53,  129 => 50,  116 => 48,  112 => 47,  108 => 45,  106 => 44,  100 => 40,  98 => 39,  75 => 19,  71 => 18,  67 => 17,  63 => 16,  58 => 13,  56 => 10,  45 => 1,);
+        return array (  274 => 92,  264 => 91,  253 => 11,  243 => 10,  229 => 103,  223 => 100,  220 => 99,  216 => 96,  214 => 95,  211 => 94,  208 => 93,  206 => 91,  199 => 89,  196 => 88,  175 => 69,  161 => 63,  156 => 61,  152 => 60,  140 => 56,  136 => 55,  131 => 52,  118 => 50,  114 => 49,  110 => 47,  108 => 46,  102 => 42,  100 => 41,  75 => 19,  71 => 18,  67 => 17,  63 => 16,  58 => 13,  56 => 10,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -306,6 +316,8 @@ class __TwigTemplate_2f1478f284819b211fe784591c42c653 extends Template
 \t\t<link rel=\"stylesheet\" href=\"{{asset('assets/css/elcafexito.css')}}\">
 \t\t<link href=\"{{ asset('assets/css/bootstrap.min.css') }}\" rel=\"stylesheet\">
 \t\t<link href=\"{{ asset('assets/css/carousel.css') }}\" rel=\"stylesheet\">
+\t\t<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">
+
 \t\t<style>
 \t\t\t.bd-placeholder-img {
 \t\t\t\tfont-size: 1.125rem;
@@ -343,8 +355,8 @@ class __TwigTemplate_2f1478f284819b211fe784591c42c653 extends Template
 \t\t\t\t\t\t\t<div class=\"carousel-item {% if key == 0 %} active {% endif %} \" style=\"background: url('/uploads/{{ header.illustration }}'); background-size: cover;\">
 
 \t\t\t\t\t\t\t\t<div class=\"container\">
-\t\t\t\t\t\t\t\t\t<div class=\"carousel-caption text-left\">
-\t\t\t\t\t\t\t\t\t\t<h1>{{ header.title }}</h1>
+\t\t\t\t\t\t\t\t\t<div class=\"carousel-caption text-left acceuilH\">
+\t\t\t\t\t\t\t\t\t\t<h4 class=\"display-4\">{{ header.title }}</h4>
 \t\t\t\t\t\t\t\t\t\t<p>{{ header.content }}</p>
 \t\t\t\t\t\t\t\t\t\t<p>
 \t\t\t\t\t\t\t\t\t\t\t<a class=\"btn btn-lg btn-info\" href=\"{{ header.btnUrl }}\" role=\"button\">{{ header.btnTitle }}</a>
@@ -373,8 +385,11 @@ class __TwigTemplate_2f1478f284819b211fe784591c42c653 extends Template
 \t\t\t\t</div>
 \t\t\t{% endif %}
 
-\t\t\t<div class=\"container marketing {% if block('carousel') is not defined %}mt-5{% endif %}\"> {% block content %}{% endblock %}
+\t\t\t<div class=\"container marketing {% if block('carousel') is not defined %}mt-5{% endif %}\"> 
 
+\t\t\t{% block content %}
+\t\t\t{% endblock %}
+\t\t\t\t{% include './components/_social.html.twig' %}
 \t\t\t\t</div>
 \t\t\t\t{% include './components/_footer.html.twig' %}
 
@@ -382,8 +397,9 @@ class __TwigTemplate_2f1478f284819b211fe784591c42c653 extends Template
 \t\t\t{# <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script> #}
 \t\t\t<script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
 \t\t\t<script src=\"{{ asset('assets/js/bootstrap.bundle.js') }}\"></script>
-\t\t\t<script src=\"{{ asset('assets/js/app.js') }}\"></script>
+\t\t\t<script src=\"https://unpkg.com/scrollreveal\"></script>
 \t\t\t<script src=\"//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js\"></script>
+\t\t\t<script src=\"{{ asset('assets/js/app.js') }}\"></script>
 \t\t</body>
 \t</html>
 ", "base.html.twig", "C:\\wamp64\\www\\el-cafexito\\templates\\base.html.twig");

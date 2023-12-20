@@ -85,7 +85,7 @@ class __TwigTemplate_5e48875b55efe062b546389058885f10 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 6
-        echo "<h1 class=\"text-center p-5\"> Modifier votre mon de passe </h1>
+        echo "<h1 class=\"text-center p-5\"> Modifier votre mot de passe </h1>
 
 <hr>
 ";
@@ -136,7 +136,7 @@ class __TwigTemplate_5e48875b55efe062b546389058885f10 extends Template
 {% block title %}Modifier mon mot de passe{% endblock %}
 
 {% block content %}
-<h1 class=\"text-center p-5\"> Modifier votre mon de passe </h1>
+<h1 class=\"text-center p-5\"> Modifier votre mot de passe </h1>
 
 <hr>
 {% if notification %}

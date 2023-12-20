@@ -87,81 +87,82 @@ class __TwigTemplate_89552c7eab5fe71a8578b5964b1ba6fc extends Template
         // line 6
         echo "<h1 class=\"text-center p-5\">GALERIE PHOTO</h1>
 
-<div class=\"container cont-gallery\" id=\"#gallery\">
+<div class=\"container cont-gallery\" id=\"gallery\">
 
-        <div class=\"gallery\">
-            <div class=\"gallery-item\">
-";
+    <div class=\"gallery\">
+        <ul class=\"gallery-item\">
+            ";
         // line 12
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["images"]) || array_key_exists("images", $context) ? $context["images"] : (function () { throw new RuntimeError('Variable "images" does not exist.', 12, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
             echo "    
-                <img src=\"/uploads/";
-            // line 13
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["image"], "image", [], "any", false, false, false, 13), "html", null, true);
-            echo "\" class=\"mb-2 zoom\" alt=\"test\">
-";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 14
-        echo " 
-            </div>           
-        </div>
-
-        <div class=\"gallery\">
-            <div class=\"gallery-item\">
-";
-        // line 20
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["images"]) || array_key_exists("images", $context) ? $context["images"] : (function () { throw new RuntimeError('Variable "images" does not exist.', 20, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
-            echo "    
-                <img src=\"/uploads/";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["image"], "image2", [], "any", false, false, false, 21), "html", null, true);
-            echo "\" class=\"mb-2 zoom\" alt=\"test2\">
-";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 22
-        echo " 
-            </div>       
-        </div>
-
-        <div class=\"gallery\">
-          <div class=\"gallery-item\">
-";
-        // line 28
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["images"]) || array_key_exists("images", $context) ? $context["images"] : (function () { throw new RuntimeError('Variable "images" does not exist.', 28, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
-            echo "    
-            <img src=\"/uploads/";
-            // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["image"], "image3", [], "any", false, false, false, 29), "html", null, true);
-            echo "\" class=\"mb-2 zoom\" alt=\"test3\">
+                <li>
+                    <img src=\"/uploads/";
+            // line 14
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["image"], "image", [], "any", false, false, false, 14), "html", null, true);
+            echo "\" class=\"mb-2\" alt=\"Image Gallerie photo\">
+                </li>
             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 30
+        // line 16
         echo " 
-          </div>  
-        </div>
+        </ul>           
+    </div>
 
+    <div class=\"gallery\">
+        <ul class=\"gallery-item\">
+            ";
+        // line 22
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["images"]) || array_key_exists("images", $context) ? $context["images"] : (function () { throw new RuntimeError('Variable "images" does not exist.', 22, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
+            echo "    
+                <li>
+                    <img src=\"/uploads/";
+            // line 24
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["image"], "image2", [], "any", false, false, false, 24), "html", null, true);
+            echo "\" class=\"mb-2\" alt=\"Image Gallerie photo\">
+                </li>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 26
+        echo " 
+        </ul>       
+    </div>
+
+    <div class=\"gallery\">
+        <ul class=\"gallery-item\">
+            ";
+        // line 32
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["images"]) || array_key_exists("images", $context) ? $context["images"] : (function () { throw new RuntimeError('Variable "images" does not exist.', 32, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
+            echo "    
+                <li>
+                    <img src=\"/uploads/";
+            // line 34
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["image"], "image3", [], "any", false, false, false, 34), "html", null, true);
+            echo "\" class=\"mb-2\" alt=\"Image Gallerie photo\">
+                </li>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 36
+        echo " 
+        </ul>  
+    </div>
 
 </div>
 
-          <div class=\"modal\">
-            <span class=\"close\">&times;</span>
-            <img class=\"modal-content\" src=\"\" alt=\"\">
-          </div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -183,7 +184,7 @@ class __TwigTemplate_89552c7eab5fe71a8578b5964b1ba6fc extends Template
 
     public function getDebugInfo()
     {
-        return array (  154 => 30,  146 => 29,  140 => 28,  132 => 22,  124 => 21,  118 => 20,  110 => 14,  102 => 13,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  160 => 36,  151 => 34,  144 => 32,  136 => 26,  127 => 24,  120 => 22,  112 => 16,  103 => 14,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -195,39 +196,40 @@ class __TwigTemplate_89552c7eab5fe71a8578b5964b1ba6fc extends Template
 {% block content %}
 <h1 class=\"text-center p-5\">GALERIE PHOTO</h1>
 
-<div class=\"container cont-gallery\" id=\"#gallery\">
+<div class=\"container cont-gallery\" id=\"gallery\">
 
-        <div class=\"gallery\">
-            <div class=\"gallery-item\">
-{% for image in images %}    
-                <img src=\"/uploads/{{ image.image }}\" class=\"mb-2 zoom\" alt=\"test\">
-{% endfor %} 
-            </div>           
-        </div>
-
-        <div class=\"gallery\">
-            <div class=\"gallery-item\">
-{% for image in images %}    
-                <img src=\"/uploads/{{ image.image2 }}\" class=\"mb-2 zoom\" alt=\"test2\">
-{% endfor %} 
-            </div>       
-        </div>
-
-        <div class=\"gallery\">
-          <div class=\"gallery-item\">
-{% for image in images %}    
-            <img src=\"/uploads/{{ image.image3 }}\" class=\"mb-2 zoom\" alt=\"test3\">
+    <div class=\"gallery\">
+        <ul class=\"gallery-item\">
+            {% for image in images %}    
+                <li>
+                    <img src=\"/uploads/{{ image.image }}\" class=\"mb-2\" alt=\"Image Gallerie photo\">
+                </li>
             {% endfor %} 
-          </div>  
-        </div>
+        </ul>           
+    </div>
 
+    <div class=\"gallery\">
+        <ul class=\"gallery-item\">
+            {% for image in images %}    
+                <li>
+                    <img src=\"/uploads/{{ image.image2 }}\" class=\"mb-2\" alt=\"Image Gallerie photo\">
+                </li>
+            {% endfor %} 
+        </ul>       
+    </div>
+
+    <div class=\"gallery\">
+        <ul class=\"gallery-item\">
+            {% for image in images %}    
+                <li>
+                    <img src=\"/uploads/{{ image.image3 }}\" class=\"mb-2\" alt=\"Image Gallerie photo\">
+                </li>
+            {% endfor %} 
+        </ul>  
+    </div>
 
 </div>
 
-          <div class=\"modal\">
-            <span class=\"close\">&times;</span>
-            <img class=\"modal-content\" src=\"\" alt=\"\">
-          </div>
 {% endblock %}
 
 ", "gallery/index.html.twig", "C:\\wamp64\\www\\el-cafexito\\templates\\gallery\\index.html.twig");

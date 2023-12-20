@@ -5,38 +5,39 @@
 {% block content %}
 <h1 class="text-center p-5">GALERIE PHOTO</h1>
 
-<div class="container cont-gallery" id="#gallery">
+<div class="container cont-gallery" id="gallery">
 
-        <div class="gallery">
-            <div class="gallery-item">
-{% for image in images %}    
-                <img src="/uploads/{{ image.image }}" class="mb-2 zoom" alt="test">
-{% endfor %} 
-            </div>           
-        </div>
-
-        <div class="gallery">
-            <div class="gallery-item">
-{% for image in images %}    
-                <img src="/uploads/{{ image.image2 }}" class="mb-2 zoom" alt="test2">
-{% endfor %} 
-            </div>       
-        </div>
-
-        <div class="gallery">
-          <div class="gallery-item">
-{% for image in images %}    
-            <img src="/uploads/{{ image.image3 }}" class="mb-2 zoom" alt="test3">
+    <div class="gallery">
+        <ul class="gallery-item">
+            {% for image in images %}    
+                <li>
+                    <img src="/uploads/{{ image.image }}" class="mb-2" alt="Image Gallerie photo">
+                </li>
             {% endfor %} 
-          </div>  
-        </div>
+        </ul>           
+    </div>
 
+    <div class="gallery">
+        <ul class="gallery-item">
+            {% for image in images %}    
+                <li>
+                    <img src="/uploads/{{ image.image2 }}" class="mb-2" alt="Image Gallerie photo">
+                </li>
+            {% endfor %} 
+        </ul>       
+    </div>
+
+    <div class="gallery">
+        <ul class="gallery-item">
+            {% for image in images %}    
+                <li>
+                    <img src="/uploads/{{ image.image3 }}" class="mb-2" alt="Image Gallerie photo">
+                </li>
+            {% endfor %} 
+        </ul>  
+    </div>
 
 </div>
 
-          <div class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" src="" alt="">
-          </div>
 {% endblock %}
 

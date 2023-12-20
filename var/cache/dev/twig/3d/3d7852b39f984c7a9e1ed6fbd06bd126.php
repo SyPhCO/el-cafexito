@@ -44,13 +44,13 @@ class __TwigTemplate_968bcff6c75ab276de72c3a69b3e3309 extends Template
     <a href=\"";
         // line 2
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product", ["slug" => twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 2, $this->source); })()), "slug", [], "any", false, false, false, 2)]), "html", null, true);
-        echo "\">
+        echo "\" >
         <img src=\"/uploads/";
         // line 3
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 3, $this->source); })()), "illustration", [], "any", false, false, false, 3), "html", null, true);
         echo "\" alt=\"";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 3, $this->source); })()), "name", [], "any", false, false, false, 3), "html", null, true);
-        echo "\" class=\"figure-img img-fluid img-thumbnail max-width:200px\"style=\"height:350px; width: 350px\">
+        echo "\" class=\"figure-img img-fluid img-thumbnail rounded-circle object-fit-cover\"style=\"height:250px; width: 250px\">
     </a>
     <h4>";
         // line 5
@@ -91,8 +91,8 @@ class __TwigTemplate_968bcff6c75ab276de72c3a69b3e3309 extends Template
     public function getSourceContext()
     {
         return new Source("<div class=\"product-item text-center\">
-    <a href=\"{{ path('app_product', { 'slug' : product.slug }) }}\">
-        <img src=\"/uploads/{{ product.illustration }}\" alt=\"{{ product.name }}\" class=\"figure-img img-fluid img-thumbnail max-width:200px\"style=\"height:350px; width: 350px\">
+    <a href=\"{{ path('app_product', { 'slug' : product.slug }) }}\" >
+        <img src=\"/uploads/{{ product.illustration }}\" alt=\"{{ product.name }}\" class=\"figure-img img-fluid img-thumbnail rounded-circle object-fit-cover\"style=\"height:250px; width: 250px\">
     </a>
     <h4>{{ product.name }}</h4>
     <span class=\"product-subtitle\">{{ product.subtitle }}</span>

@@ -94,7 +94,7 @@ class __TwigTemplate_2fd38515b90ed9e5d081faea3a74a5f5 extends Template
 \t\t\tLe Bourbon rose (« Borbon Rosado ») résulte d’un croisement de bourbon rouge et de bourbon jaune. Il se distingue de la couleur rose vive lorsque ses cerises sont mûres.<br><br>
 \t\t\tFruité, complexe avec un grand corps et une belle acidité, il est réputé pour être doux, avec des saveurs caramélisées.
 \t\t\tL’expérience de la dégustation vous promet une texture soyeuse et élégante, réveillant de subtiles notes florales.</p>
-\t\t<div class=\"col-md-3\">
+\t\t<div class=\"col-md-2\">
 \t\t\t<h1 class=\"mt-5 mb-5 text-center\">Filtrer</h1>
 \t\t\t";
         // line 17
@@ -102,7 +102,7 @@ class __TwigTemplate_2fd38515b90ed9e5d081faea3a74a5f5 extends Template
         echo "
 \t\t</div>
 
-\t\t\t<div class=\"col-md-9\">
+\t\t\t<div class=\"col-md-10\">
 \t\t\t\t<h1 class='mt-5 text-center mb-5'>Nos Produits
 \t\t\t\t</h1>
 \t\t\t\t<div class=\"row\">
@@ -125,7 +125,7 @@ class __TwigTemplate_2fd38515b90ed9e5d081faea3a74a5f5 extends Template
         }
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
             // line 25
-            echo "\t\t\t\t\t\t<div class=\"col-md-4\">
+            echo "\t\t\t\t\t\t<div class=\"col-md-4\"  >
 \t\t\t\t\t\t\t";
             // line 26
             $this->loadTemplate("product/single_product.html.twig", "product/index.html.twig", 26)->display($context);
@@ -190,17 +190,17 @@ class __TwigTemplate_2fd38515b90ed9e5d081faea3a74a5f5 extends Template
 \t\t\tLe Bourbon rose (« Borbon Rosado ») résulte d’un croisement de bourbon rouge et de bourbon jaune. Il se distingue de la couleur rose vive lorsque ses cerises sont mûres.<br><br>
 \t\t\tFruité, complexe avec un grand corps et une belle acidité, il est réputé pour être doux, avec des saveurs caramélisées.
 \t\t\tL’expérience de la dégustation vous promet une texture soyeuse et élégante, réveillant de subtiles notes florales.</p>
-\t\t<div class=\"col-md-3\">
+\t\t<div class=\"col-md-2\">
 \t\t\t<h1 class=\"mt-5 mb-5 text-center\">Filtrer</h1>
 \t\t\t{{ form(form) }}
 \t\t</div>
 
-\t\t\t<div class=\"col-md-9\">
+\t\t\t<div class=\"col-md-10\">
 \t\t\t\t<h1 class='mt-5 text-center mb-5'>Nos Produits
 \t\t\t\t</h1>
 \t\t\t\t<div class=\"row\">
 \t\t\t\t\t{% for product in products %}
-\t\t\t\t\t\t<div class=\"col-md-4\">
+\t\t\t\t\t\t<div class=\"col-md-4\"  >
 \t\t\t\t\t\t\t{% include 'product/single_product.html.twig' %}
 \t\t\t\t\t\t</div>
 \t\t\t\t\t{% endfor %}

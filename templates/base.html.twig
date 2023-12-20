@@ -17,6 +17,8 @@
 		<link rel="stylesheet" href="{{asset('assets/css/elcafexito.css')}}">
 		<link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
 		<link href="{{ asset('assets/css/carousel.css') }}" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 		<style>
 			.bd-placeholder-img {
 				font-size: 1.125rem;
@@ -54,8 +56,8 @@
 							<div class="carousel-item {% if key == 0 %} active {% endif %} " style="background: url('/uploads/{{ header.illustration }}'); background-size: cover;">
 
 								<div class="container">
-									<div class="carousel-caption text-left">
-										<h1>{{ header.title }}</h1>
+									<div class="carousel-caption text-left acceuilH">
+										<h4 class="display-4">{{ header.title }}</h4>
 										<p>{{ header.content }}</p>
 										<p>
 											<a class="btn btn-lg btn-info" href="{{ header.btnUrl }}" role="button">{{ header.btnTitle }}</a>
@@ -84,8 +86,11 @@
 				</div>
 			{% endif %}
 
-			<div class="container marketing {% if block('carousel') is not defined %}mt-5{% endif %}"> {% block content %}{% endblock %}
+			<div class="container marketing {% if block('carousel') is not defined %}mt-5{% endif %}"> 
 
+			{% block content %}
+			{% endblock %}
+				{% include './components/_social.html.twig' %}
 				</div>
 				{% include './components/_footer.html.twig' %}
 
@@ -93,7 +98,8 @@
 			{# <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> #}
 			<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 			<script src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
-			<script src="{{ asset('assets/js/app.js') }}"></script>
+			<script src="https://unpkg.com/scrollreveal"></script>
 			<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+			<script src="{{ asset('assets/js/app.js') }}"></script>
 		</body>
 	</html>

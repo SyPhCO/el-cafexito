@@ -12,17 +12,17 @@
 			Le Bourbon rose (« Borbon Rosado ») résulte d’un croisement de bourbon rouge et de bourbon jaune. Il se distingue de la couleur rose vive lorsque ses cerises sont mûres.<br><br>
 			Fruité, complexe avec un grand corps et une belle acidité, il est réputé pour être doux, avec des saveurs caramélisées.
 			L’expérience de la dégustation vous promet une texture soyeuse et élégante, réveillant de subtiles notes florales.</p>
-		<div class="col-md-3">
+		<div class="col-md-2">
 			<h1 class="mt-5 mb-5 text-center">Filtrer</h1>
 			{{ form(form) }}
 		</div>
 
-			<div class="col-md-9">
+			<div class="col-md-10">
 				<h1 class='mt-5 text-center mb-5'>Nos Produits
 				</h1>
 				<div class="row">
 					{% for product in products %}
-						<div class="col-md-4">
+						<div class="col-md-4"  >
 							{% include 'product/single_product.html.twig' %}
 						</div>
 					{% endfor %}

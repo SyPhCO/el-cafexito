@@ -25,6 +25,20 @@
 					<a class="nav-link" href="{{path('app_contact')}}">Contact</a>
 				</li>
 			</ul>
+			{# new #}
+		  {# <h1>Thème</h1>
+  <label class="switch">
+    <input type="checkbox" onchange="changeValues()"  id="themeSwitch">
+    <span class="slider"></span>
+  </label> #}
+  <div class="switch">
+    <input type="checkbox" onchange="changeValues()"  id="themeSwitch">
+    <label for="themeSwitch">
+        <img src="{{ asset('assets/images/sun.png')}}" alt="Soleil" class="icon" id="sunIcon">
+        <img src="{{ asset('assets/images/moon.png')}}" alt="Lune" class="icon" id="moonIcon">
+    </label>
+</div>
+		{# new #}
 			<div class="navbar-item-custom">
 				{% if app.user %}
 					<a href="{{ path('app_account')}}">Mon compte
