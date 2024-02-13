@@ -85,73 +85,86 @@ class __TwigTemplate_610f02e19b6aa6b261be079ef08e24a0 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 6
-        echo "<h1 class=\"text-center p-5\">Mon compte</h1>
-";
-        // line 7
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 8
-            echo "<div class=\"text-center  fw-bold text-light\">
-<a href=\"/admin\" role=\"button\" class=\" text-light border bg-info rounded-pill p-3\">Backoffice</a><br> <br>
-</div>
-";
-        }
-        // line 12
-        echo "Bienvenue dans votre espace personnel <strong class=\"text-uppercase \"> ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12), "firstname", [], "any", false, false, false, 12), "html", null, true);
+        echo "
+<h1 class=\"text-center p-5\">Mon compte</h1>
+Bienvenue dans votre espace personnel <strong class=\"text-uppercase \"> ";
+        // line 8
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 8, $this->source); })()), "user", [], "any", false, false, false, 8), "firstname", [], "any", false, false, false, 8), "html", null, true);
         echo " </strong>. 
 <hr>
+";
+        // line 10
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 11
+            echo "
+<div class=\"row justify-content-center\">
+    <a class=\"col-md-2 bg-info bg-gradient p-3 m-2 font-weight-bold text-center rounded\" href=\"/admin\">
+            <img src=\"";
+            // line 14
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/computer.png"), "html", null, true);
+            echo "\" alt=\"Backoffice\" ><br>
+            <span  class=\" text-light\">Backoffice</span>
+    </a>
+    <a class=\"col-md-2 bg-info bg-gradient p-3 m-2 font-weight-bold text-center rounded\" href=\"";
+            // line 17
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_accounting");
+            echo "\">
+            <img src=\"";
+            // line 18
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/comptabilite.png"), "html", null, true);
+            echo "\" alt=\"Comptabilité\" ><br>
+            <span  class=\" text-light\">Comptabilité</span>
+    </a>
+    </div>
+";
+        }
+        // line 23
+        echo "
 
 <div class=\"row justify-content-center\">
     <a class=\"col-md-2 bg-info bg-gradient p-3 m-2 font-weight-bold text-center rounded\" href=\"";
-        // line 16
+        // line 26
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_account_password");
         echo "\">
-        <div class=\"account-item \">
             <img src=\"";
-        // line 18
+        // line 27
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/icons8.png"), "html", null, true);
         echo "\" alt=\"Modifier mon mot de passe\" ><br>
             <span  class=\" text-light\">Modifier mon mot de passe</span>
-        </div>
     </a>
     <a class=\"col-md-2 bg-info bg-gradient m-2 p-3 font-weight-bold  text-center rounded \" href=\"";
-        // line 22
+        // line 30
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_account_address");
         echo "\" >
-        <div class=\"account-item\">
             <img src=\"";
-        // line 24
+        // line 31
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/icons9.png"), "html", null, true);
         echo "\" alt=\"Gérer mes adresses\" ><br>            
             <span  class=\" text-light\">Gérer mes adresses</span>
-        </div>
     </a>
     <a class=\"col-md-2 bg-info bg-gradient p-3 m-2 font-weight-bold  text-center rounded\"  href=\"";
-        // line 28
+        // line 34
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_account_order");
         echo "\" >
-        <div class=\"account-item\">
             <img src=\"";
-        // line 30
+        // line 35
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/icons7.png"), "html", null, true);
         echo "\" alt=\"mes commandes\"><br>
             <span class=\"text-light\">Mes commandes</span>
-        </div>
     </a>
         <a class=\"col-md-2 bg-info bg-gradient p-3 m-2 font-weight-bold  text-center rounded\"  href=\"";
-        // line 34
+        // line 38
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_let_comment");
         echo "\" >
-        <div class=\"account-item\">
             <img src=\"";
-        // line 36
+        // line 39
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/iconComment.png"), "html", null, true);
         echo "\" alt=\"mes commentaires\"><br>
             <span class=\"text-light\">Laissez-nous un commentaire</span>
-        </div>
     </a>
 </div>
 <hr>
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -173,7 +186,7 @@ class __TwigTemplate_610f02e19b6aa6b261be079ef08e24a0 extends Template
 
     public function getDebugInfo()
     {
-        return array (  148 => 36,  143 => 34,  136 => 30,  131 => 28,  124 => 24,  119 => 22,  112 => 18,  107 => 16,  99 => 12,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  161 => 39,  157 => 38,  151 => 35,  147 => 34,  141 => 31,  137 => 30,  131 => 27,  127 => 26,  122 => 23,  114 => 18,  110 => 17,  104 => 14,  99 => 11,  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -183,42 +196,45 @@ class __TwigTemplate_610f02e19b6aa6b261be079ef08e24a0 extends Template
 {% block title %}Mon compte - El cafexito{% endblock %}
 
 {% block content %}
+
 <h1 class=\"text-center p-5\">Mon compte</h1>
-{% if  is_granted(\"ROLE_ADMIN\") %}
-<div class=\"text-center  fw-bold text-light\">
-<a href=\"/admin\" role=\"button\" class=\" text-light border bg-info rounded-pill p-3\">Backoffice</a><br> <br>
-</div>
-{% endif %}
 Bienvenue dans votre espace personnel <strong class=\"text-uppercase \"> {{ app.user.firstname }} </strong>. 
 <hr>
+{% if  is_granted(\"ROLE_ADMIN\") %}
+
+<div class=\"row justify-content-center\">
+    <a class=\"col-md-2 bg-info bg-gradient p-3 m-2 font-weight-bold text-center rounded\" href=\"/admin\">
+            <img src=\"{{ asset('assets/images/computer.png') }}\" alt=\"Backoffice\" ><br>
+            <span  class=\" text-light\">Backoffice</span>
+    </a>
+    <a class=\"col-md-2 bg-info bg-gradient p-3 m-2 font-weight-bold text-center rounded\" href=\"{{ path('app_accounting')}}\">
+            <img src=\"{{ asset('assets/images/comptabilite.png') }}\" alt=\"Comptabilité\" ><br>
+            <span  class=\" text-light\">Comptabilité</span>
+    </a>
+    </div>
+{% endif %}
+
 
 <div class=\"row justify-content-center\">
     <a class=\"col-md-2 bg-info bg-gradient p-3 m-2 font-weight-bold text-center rounded\" href=\"{{ path('app_account_password')}}\">
-        <div class=\"account-item \">
             <img src=\"{{ asset('assets/images/icons8.png') }}\" alt=\"Modifier mon mot de passe\" ><br>
             <span  class=\" text-light\">Modifier mon mot de passe</span>
-        </div>
     </a>
     <a class=\"col-md-2 bg-info bg-gradient m-2 p-3 font-weight-bold  text-center rounded \" href=\"{{ path('app_account_address')}}\" >
-        <div class=\"account-item\">
             <img src=\"{{ asset('assets/images/icons9.png') }}\" alt=\"Gérer mes adresses\" ><br>            
             <span  class=\" text-light\">Gérer mes adresses</span>
-        </div>
     </a>
     <a class=\"col-md-2 bg-info bg-gradient p-3 m-2 font-weight-bold  text-center rounded\"  href=\"{{ path('app_account_order')}}\" >
-        <div class=\"account-item\">
             <img src=\"{{ asset('assets/images/icons7.png') }}\" alt=\"mes commandes\"><br>
             <span class=\"text-light\">Mes commandes</span>
-        </div>
     </a>
         <a class=\"col-md-2 bg-info bg-gradient p-3 m-2 font-weight-bold  text-center rounded\"  href=\"{{ path('app_let_comment')}}\" >
-        <div class=\"account-item\">
             <img src=\"{{ asset('assets/images/iconComment.png') }}\" alt=\"mes commentaires\"><br>
             <span class=\"text-light\">Laissez-nous un commentaire</span>
-        </div>
     </a>
 </div>
 <hr>
+
 {% endblock %}
 ", "account/index.html.twig", "C:\\wamp64\\www\\el-cafexito\\templates\\account\\index.html.twig");
     }

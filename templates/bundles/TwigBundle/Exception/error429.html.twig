@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Trop de requêtes{% endblock %}
+
+{% block content %}
+<div class="error">*
+<p>Oups il semble y avoir un problème : </p>
+<h1 class="m-3">Erreur 429</h1>
+<p>Vous avez envoyé trop de requêtes dans un laps de temps donné.</p>
+</div>
+{% endblock %}

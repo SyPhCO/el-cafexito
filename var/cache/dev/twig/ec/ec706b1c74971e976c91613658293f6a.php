@@ -40,118 +40,97 @@ class __TwigTemplate_cc5c287e2fd04c123f8dbff16c1dd6bd extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "components/_navbar.html.twig"));
 
         // line 1
-        echo "<header class=\"pb-5\">
-\t<nav class=\"navbar navbar-expand-xl navbar-dark fixed-top bg-dark\">
-\t\t<a class=\"navbar-brand\" href=\"";
+        echo "<div class=\"nav\" >
+\t<a href=\"";
+        // line 2
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        echo "\" class=\"nav-icon mr-5\" aria-label=\"visit homepage\" aria-current=\"page\">
+\t\t<img src=\"";
         // line 3
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
-        echo "\"><img src=\"/assets/images/logo1.png\" alt=\"logo\" class=\"logo1\"></a>
-\t\t<a class=\"navbar-brand\" href=\"";
-        // line 4
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
-        echo "\">El cafexito</a>
-\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-\t\t\t<span class=\"navbar-toggler-icon\"></span>
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/logo2.png"), "html", null, true);
+        echo "\" class=\"mr-2\" alt=\"logo cafexito\">
+\t\t<span>El Cafexito</span>
+\t</a>
+\t<div class=\"main-navlinks\">
+\t\t<button class=\"hamburger\" type=\"button\" aria-label=\"Toggle navigation\" aria-expanded=\"false\">
+\t\t\t<span></span>
+\t\t\t<span></span>
+\t\t\t<span></span>
 \t\t</button>
-\t\t<div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">
-\t\t\t<ul class=\"navbar-nav mr-auto\">
-
-\t\t\t\t<li class=\"nav-item active\">
-\t\t\t\t\t<a class=\"nav-link\" href=\"";
-        // line 12
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_read_comments");
-        echo "\">Nos produits</a>
-\t\t\t\t</li>
-\t\t\t\t<li class=\"nav-item active\">
-\t\t\t\t\t<a class=\"nav-link\" href=\"";
+\t\t<div class=\"navlinks-container\">
+\t\t<ul>
+\t\t</ul>
+\t\t\t<a href=\"";
         // line 15
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        echo "\" aria-current=\"page\">Acceuil</a>
+\t\t\t<a href=\"";
+        // line 16
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_team");
-        echo "\">Qui sommes-nous?
-\t\t\t\t\t</a>
-\t\t\t\t</li>
-\t\t\t\t<li class=\"nav-item active\">
-\t\t\t\t\t<a class=\"nav-link\" href=\"";
+        echo "\" aria-current=\"page\">Qui sommes-nous?</a>
+\t\t\t<a href=\"";
+        // line 17
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_cauca");
+        echo "\" aria-current=\"page\">Région Cauca</a>
+\t\t\t<a href=\"";
+        // line 18
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_read_comments");
+        echo "\" aria-current=\"page\">Nos produits</a>
+\t\t\t<a href=\"";
         // line 19
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_advice");
+        echo "\" aria-current=\"page\">Nos conseils</a>
+\t\t\t<a href=\"";
+        // line 20
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_gallery");
-        echo "\">Galerie</a>
-\t\t\t\t</li>
-\t\t\t\t<li class=\"nav-item active\">
-\t\t\t\t\t<a class=\"nav-link\" href=\"";
-        // line 22
+        echo "\" aria-current=\"page\">Galerie</a>
+\t\t\t<a href=\"";
+        // line 21
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_products");
-        echo "\">Achetez notre café</a>
-\t\t\t\t</li>
-\t\t\t\t<li class=\"nav-item active\">
-\t\t\t\t\t<a class=\"nav-link\" href=\"";
-        // line 25
+        echo "\" aria-current=\"page\">Achetez notre café</a>
+\t\t\t<a href=\"";
+        // line 22
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact");
-        echo "\">Contact</a>
-\t\t\t\t</li>
-\t\t\t</ul>
+        echo "\" aria-current=\"page\">Contact</a>
+\t\t</div>
+\t    </div>
+
+\t<div class=\"nav-authentification \">
+\t\t<div class=\"sign-btns\">
+        
 \t\t\t";
         // line 29
-        echo "\t\t  ";
-        // line 34
-        echo "  <div class=\"switch\">
-    <input type=\"checkbox\" onchange=\"changeValues()\"  id=\"themeSwitch\">
-    <label for=\"themeSwitch\">
-        <img src=\"";
-        // line 37
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/sun.png"), "html", null, true);
-        echo "\" alt=\"Soleil\" class=\"icon\" id=\"sunIcon\">
-        <img src=\"";
-        // line 38
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/moon.png"), "html", null, true);
-        echo "\" alt=\"Lune\" class=\"icon\" id=\"moonIcon\">
-    </label>
-</div>
-\t\t";
-        // line 42
-        echo "\t\t\t<div class=\"navbar-item-custom\">
-\t\t\t\t";
-        // line 43
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 43, $this->source); })()), "user", [], "any", false, false, false, 43)) {
-            // line 44
-            echo "\t\t\t\t\t<a href=\"";
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 29, $this->source); })()), "user", [], "any", false, false, false, 29)) {
+            // line 30
+            echo "\t\t\t\t<a  href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_account");
-            echo "\">Mon compte
-\t\t\t\t\t\t<small>(";
-            // line 45
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 45, $this->source); })()), "user", [], "any", false, false, false, 45), "firstname", [], "any", false, false, false, 45), "html", null, true);
-            echo ")</small>
-\t\t\t\t\t</a>
-\t\t\t\t\t|
-\t\t\t\t\t<a href=\"";
-            // line 48
+            echo "\">Mon compte</a>
+                |
+\t\t\t\t<a  href=\"";
+            // line 32
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\">Déconnexion</a>
-\t\t\t\t\t<a href=\"";
-            // line 49
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_cart");
-            echo "\">
-\t\t\t\t\t\t<img src=\"";
-            // line 50
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/cart9.png"), "html", null, true);
-            echo "\" alt=\"Mon panier\" class=\"cart-icon mr-3\">
-\t\t\t\t\t</a>
-\t\t\t\t";
+            echo "\">Deconnexion</a>
+\t\t\t";
         } else {
-            // line 53
-            echo "\t\t\t\t\t<a href=\"";
+            // line 34
+            echo "\t\t\t\t<a  href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">Connexion</a>
-\t\t\t\t\t|
-\t\t\t\t\t<a href=\"";
-            // line 55
+                |
+\t\t\t\t<a href=\"";
+            // line 36
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
             echo "\">Inscription</a>
-\t\t\t\t";
+\t\t\t";
         }
-        // line 57
-        echo "\t\t\t</div>
-\t\t</div>
-\t</nav>
-</header>
+        // line 38
+        echo "\t\t</div>
+
+\t</div>
+
+
+</div>
+
 ";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -173,71 +152,55 @@ class __TwigTemplate_cc5c287e2fd04c123f8dbff16c1dd6bd extends Template
 
     public function getDebugInfo()
     {
-        return array (  151 => 57,  146 => 55,  140 => 53,  134 => 50,  130 => 49,  126 => 48,  120 => 45,  115 => 44,  113 => 43,  110 => 42,  104 => 38,  100 => 37,  95 => 34,  93 => 29,  87 => 25,  81 => 22,  75 => 19,  68 => 15,  62 => 12,  51 => 4,  47 => 3,  43 => 1,);
+        return array (  127 => 38,  122 => 36,  116 => 34,  111 => 32,  105 => 30,  103 => 29,  93 => 22,  89 => 21,  85 => 20,  81 => 19,  77 => 18,  73 => 17,  69 => 16,  65 => 15,  50 => 3,  46 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<header class=\"pb-5\">
-\t<nav class=\"navbar navbar-expand-xl navbar-dark fixed-top bg-dark\">
-\t\t<a class=\"navbar-brand\" href=\"{{path('app_home')}}\"><img src=\"/assets/images/logo1.png\" alt=\"logo\" class=\"logo1\"></a>
-\t\t<a class=\"navbar-brand\" href=\"{{ path('app_home')}}\">El cafexito</a>
-\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-\t\t\t<span class=\"navbar-toggler-icon\"></span>
+        return new Source("<div class=\"nav\" >
+\t<a href=\"{{path('app_home')}}\" class=\"nav-icon mr-5\" aria-label=\"visit homepage\" aria-current=\"page\">
+\t\t<img src=\"{{ asset('assets/images/logo2.png') }}\" class=\"mr-2\" alt=\"logo cafexito\">
+\t\t<span>El Cafexito</span>
+\t</a>
+\t<div class=\"main-navlinks\">
+\t\t<button class=\"hamburger\" type=\"button\" aria-label=\"Toggle navigation\" aria-expanded=\"false\">
+\t\t\t<span></span>
+\t\t\t<span></span>
+\t\t\t<span></span>
 \t\t</button>
-\t\t<div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">
-\t\t\t<ul class=\"navbar-nav mr-auto\">
-
-\t\t\t\t<li class=\"nav-item active\">
-\t\t\t\t\t<a class=\"nav-link\" href=\"{{path('app_read_comments')}}\">Nos produits</a>
-\t\t\t\t</li>
-\t\t\t\t<li class=\"nav-item active\">
-\t\t\t\t\t<a class=\"nav-link\" href=\"{{path('app_team')}}\">Qui sommes-nous?
-\t\t\t\t\t</a>
-\t\t\t\t</li>
-\t\t\t\t<li class=\"nav-item active\">
-\t\t\t\t\t<a class=\"nav-link\" href=\"{{path('app_gallery')}}\">Galerie</a>
-\t\t\t\t</li>
-\t\t\t\t<li class=\"nav-item active\">
-\t\t\t\t\t<a class=\"nav-link\" href=\"{{ path('app_products') }}\">Achetez notre café</a>
-\t\t\t\t</li>
-\t\t\t\t<li class=\"nav-item active\">
-\t\t\t\t\t<a class=\"nav-link\" href=\"{{path('app_contact')}}\">Contact</a>
-\t\t\t\t</li>
-\t\t\t</ul>
-\t\t\t{# new #}
-\t\t  {# <h1>Thème</h1>
-  <label class=\"switch\">
-    <input type=\"checkbox\" onchange=\"changeValues()\"  id=\"themeSwitch\">
-    <span class=\"slider\"></span>
-  </label> #}
-  <div class=\"switch\">
-    <input type=\"checkbox\" onchange=\"changeValues()\"  id=\"themeSwitch\">
-    <label for=\"themeSwitch\">
-        <img src=\"{{ asset('assets/images/sun.png')}}\" alt=\"Soleil\" class=\"icon\" id=\"sunIcon\">
-        <img src=\"{{ asset('assets/images/moon.png')}}\" alt=\"Lune\" class=\"icon\" id=\"moonIcon\">
-    </label>
-</div>
-\t\t{# new #}
-\t\t\t<div class=\"navbar-item-custom\">
-\t\t\t\t{% if app.user %}
-\t\t\t\t\t<a href=\"{{ path('app_account')}}\">Mon compte
-\t\t\t\t\t\t<small>({{ app.user.firstname }})</small>
-\t\t\t\t\t</a>
-\t\t\t\t\t|
-\t\t\t\t\t<a href=\"{{ path('app_logout')}}\">Déconnexion</a>
-\t\t\t\t\t<a href=\"{{ path('app_cart') }}\">
-\t\t\t\t\t\t<img src=\"{{ asset('assets/images/cart9.png')}}\" alt=\"Mon panier\" class=\"cart-icon mr-3\">
-\t\t\t\t\t</a>
-\t\t\t\t{% else %}
-\t\t\t\t\t<a href=\"{{ path('app_login')}}\">Connexion</a>
-\t\t\t\t\t|
-\t\t\t\t\t<a href=\"{{ path('app_register')}}\">Inscription</a>
-\t\t\t\t{% endif %}
-\t\t\t</div>
+\t\t<div class=\"navlinks-container\">
+\t\t<ul>
+\t\t</ul>
+\t\t\t<a href=\"{{path('app_home')}}\" aria-current=\"page\">Acceuil</a>
+\t\t\t<a href=\"{{path('app_team')}}\" aria-current=\"page\">Qui sommes-nous?</a>
+\t\t\t<a href=\"{{path('app_cauca')}}\" aria-current=\"page\">Région Cauca</a>
+\t\t\t<a href=\"{{path('app_read_comments')}}\" aria-current=\"page\">Nos produits</a>
+\t\t\t<a href=\"{{path('app_advice')}}\" aria-current=\"page\">Nos conseils</a>
+\t\t\t<a href=\"{{path('app_gallery')}}\" aria-current=\"page\">Galerie</a>
+\t\t\t<a href=\"{{ path('app_products') }}\" aria-current=\"page\">Achetez notre café</a>
+\t\t\t<a href=\"{{path('app_contact')}}\" aria-current=\"page\">Contact</a>
 \t\t</div>
-\t</nav>
-</header>
+\t    </div>
+
+\t<div class=\"nav-authentification \">
+\t\t<div class=\"sign-btns\">
+        
+\t\t\t{% if app.user %}
+\t\t\t\t<a  href=\"{{ path('app_account') }}\">Mon compte</a>
+                |
+\t\t\t\t<a  href=\"{{ path('app_logout') }}\">Deconnexion</a>
+\t\t\t{% else %}
+\t\t\t\t<a  href=\"{{ path('app_login') }}\">Connexion</a>
+                |
+\t\t\t\t<a href=\"{{ path('app_register') }}\">Inscription</a>
+\t\t\t{% endif %}
+\t\t</div>
+
+\t</div>
+
+
+</div>
+
 ", "components/_navbar.html.twig", "C:\\wamp64\\www\\el-cafexito\\templates\\components\\_navbar.html.twig");
     }
 }

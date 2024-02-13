@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* ./comments/_comments_list.html.twig */
+/* comments/_comments_list.html.twig */
 class __TwigTemplate_3a69bacf58c0079c11e2ae2665452a85 extends Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_3a69bacf58c0079c11e2ae2665452a85 extends Template
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "./comments/_comments_list.html.twig"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "comments/_comments_list.html.twig"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "./comments/_comments_list.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "comments/_comments_list.html.twig"));
 
         // line 1
         echo "
@@ -116,7 +116,7 @@ class __TwigTemplate_3a69bacf58c0079c11e2ae2665452a85 extends Template
 
     public function getTemplateName()
     {
-        return "./comments/_comments_list.html.twig";
+        return "comments/_comments_list.html.twig";
     }
 
     public function isTraitable()
@@ -155,6 +155,6 @@ class __TwigTemplate_3a69bacf58c0079c11e2ae2665452a85 extends Template
 \t\t\t\t\t\t\t{% endfor %}
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<a href=\"#top-{{ product.id }}-top\" role=\"btn btn-block\">Revenir en haut</a>
-\t\t\t\t\t</div>", "./comments/_comments_list.html.twig", "C:\\wamp64\\www\\el-cafexito\\templates\\comments\\_comments_list.html.twig");
+\t\t\t\t\t</div>", "comments/_comments_list.html.twig", "C:\\wamp64\\www\\el-cafexito\\templates\\comments\\_comments_list.html.twig");
     }
 }

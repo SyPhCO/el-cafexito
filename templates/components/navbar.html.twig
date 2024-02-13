@@ -1,0 +1,41 @@
+<div class="nav" >
+	<a href="{{path('app_home')}}" class="nav-icon mr-5" aria-label="visit homepage" aria-current="page">
+		<img src="{{ asset('assets/images/logo2.png') }}" class="mr-2" alt="logo cafexito">
+		<span>El Cafexito</span>
+	</a>
+	<div class="main-navlinks">
+		<button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<div class="navlinks-container">
+			<a href="{{path('app_home')}}" aria-current="page">Acceuil</a>
+			<a href="{{path('app_team')}}" aria-current="page">Qui sommes-nous?</a>
+			<a href="{{path('app_cauca')}}" aria-current="page">Région Cauca</a>
+			<a href="{{path('app_read_comments')}}" aria-current="page">Nos produits</a>
+			<a href="{{path('app_advice')}}" aria-current="page">Nos conseils</a>
+			<a href="{{path('app_gallery')}}" aria-current="page">Galerie</a>
+			<a href="{{ path('app_products') }}" aria-current="page">Achetez notre café</a>
+			<a href="{{path('app_contact')}}" aria-current="page">Contact</a>
+		</div>
+	    </div>
+
+	<div class="nav-authentification ">
+		<div class="sign-btns">
+        
+			{% if app.user %}
+				<a  href="{{ path('app_account') }}">Mon compte</a>
+                |
+				<a  href="{{ path('app_logout') }}">Deconnexion</a>
+			{% else %}
+				<a  href="{{ path('app_login') }}">Connexion</a>
+                |
+				<a href="{{ path('app_register') }}">Inscription</a>
+			{% endif %}
+		</div>
+
+	</div>
+
+
+</div>

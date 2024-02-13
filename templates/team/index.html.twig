@@ -2,25 +2,30 @@
 {% block title %}Qui sommes nous
 {% endblock %}
 {% block content %}
-	<h1 class="text-center mt-5">Qui sommes-nous?</h1>
+
+	<h1 class="text-center mt-5 mb-4">Qui sommes-nous?</h1>
 	{% for team in teams %}
-		<div class="row">
-			<div class="col-12 team-block">
-				<h2 class="featurette-heading">{{ team.name }}<br>
+
+		<div class="col-12 row team-block">
+				<img src="/uploads/{{ team.illustration }}" class="mb-2 team-picture" alt="Photo {{ team.name }}">
+				<h2 class=" m-auto">{{ team.name }}<br>
 					<span class="text-muted">{{ team.role }}</span>
 				</h2>
-				<img src="/uploads/{{ team.illustration }}" class="mb-2 team-picture imgzoom " alt="Photo {{ team.name }}">
-				<p class="lead">{{ team.description }}</p>
 
-				<img src="/uploads/{{ team.gallery }}" class="mb-2 team-picture imgzoom" alt="Photo descriptive {{ team.name }} 1">
+				<p class="lead col-12">{{ team.description|nl2br|raw  }}</p>
+			<div class="m-auto justify-content-center text-center">
+				<img src="/uploads/{{ team.gallery }}" class="mb-2  team-picture" alt="Photo descriptive {{ team.name }} 1">
 
-				<img src="/uploads/{{ team.gallery2 }}" class="mb-2 team-picture imgzoom" alt="Photo descriptive {{ team.name }} 2">
+				<img src="/uploads/{{ team.gallery2 }}" class="mb-2  team-picture" alt="Photo descriptive {{ team.name }} 2">
 
-				<img src="/uploads/{{ team.gallery3 }}" class="mb-2 team-picture imgzoom" alt="Photo descriptive {{ team.name }} 3">
+				<img src="/uploads/{{ team.gallery3 }}" class="mb-2  team-picture" alt="Photo descriptive {{ team.name }} 3">
 
+				<img src="/uploads/{{ team.gallery4 }}" class="mb-2  team-picture" alt="Photo descriptive {{ team.name }} 4">
 			</div>
 		</div>
-		<hr class="featurette-divider">
+
+		<hr class="mt-4 mb-4 bg-light">
 
 	{% endfor %}
+
 {% endblock %}

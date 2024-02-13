@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Méthode non autorisée{% endblock %}
+
+{% block content %}
+<div class="error">
+<p>Oups il semble y avoir un problème : </p>
+<h1 class="m-3">Erreur 405</h1>
+<p>La méthode demandée n'est pas autorisée pour l'URL demandée.</p>
+</div>
+{% endblock %}

@@ -55,66 +55,90 @@ class __TwigTemplate_32e5f974817b982bf192e41702357795 extends Template
     {
         $macros = $this->macros;
         // line 6
-        echo "<h1 class=\"text-center p-5\">Mon compte</h1>
-";
-        // line 7
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 8
-            echo "<div class=\"text-center  fw-bold text-light\">
-<a href=\"/admin\" role=\"button\" class=\" text-light border bg-info rounded-pill p-3\">Backoffice</a><br> <br>
-</div>
-";
-        }
-        // line 12
-        echo "Bienvenue dans votre espace personnel <strong class=\"text-uppercase \"> ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["app"] ?? null), "user", [], "any", false, false, false, 12), "firstname", [], "any", false, false, false, 12), "html", null, true);
+        echo "
+<h1 class=\"text-center p-5\">Mon compte</h1>
+Bienvenue dans votre espace personnel <strong class=\"text-uppercase \"> ";
+        // line 8
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["app"] ?? null), "user", [], "any", false, false, false, 8), "firstname", [], "any", false, false, false, 8), "html", null, true);
         echo " </strong>. 
 <hr>
+";
+        // line 10
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 11
+            echo "
+<div class=\"row justify-content-center\">
+    <a class=\"col-md-2 bg-info bg-gradient p-3 m-2 font-weight-bold text-center rounded\" href=\"/admin\">
+        <div class=\"account-item \">
+            <img src=\"";
+            // line 15
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/computer.png"), "html", null, true);
+            echo "\" alt=\"Backoffice\" ><br>
+            <span  class=\" text-light\">Backoffice</span>
+        </div>
+    </a>
+    <a class=\"col-md-2 bg-info bg-gradient p-3 m-2 font-weight-bold text-center rounded\" href=\"";
+            // line 19
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_accounting");
+            echo "\">
+        <div class=\"account-item \">
+            <img src=\"";
+            // line 21
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/comptabilite.png"), "html", null, true);
+            echo "\" alt=\"Comptabilité\" ><br>
+            <span  class=\" text-light\">Comptabilité</span>
+        </div>
+    </a>
+    </div>
+";
+        }
+        // line 27
+        echo "
 
 <div class=\"row justify-content-center\">
     <a class=\"col-md-2 bg-info bg-gradient p-3 m-2 font-weight-bold text-center rounded\" href=\"";
-        // line 16
+        // line 30
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_account_password");
         echo "\">
         <div class=\"account-item \">
             <img src=\"";
-        // line 18
+        // line 32
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/icons8.png"), "html", null, true);
         echo "\" alt=\"Modifier mon mot de passe\" ><br>
             <span  class=\" text-light\">Modifier mon mot de passe</span>
         </div>
     </a>
     <a class=\"col-md-2 bg-info bg-gradient m-2 p-3 font-weight-bold  text-center rounded \" href=\"";
-        // line 22
+        // line 36
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_account_address");
         echo "\" >
         <div class=\"account-item\">
             <img src=\"";
-        // line 24
+        // line 38
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/icons9.png"), "html", null, true);
         echo "\" alt=\"Gérer mes adresses\" ><br>            
             <span  class=\" text-light\">Gérer mes adresses</span>
         </div>
     </a>
     <a class=\"col-md-2 bg-info bg-gradient p-3 m-2 font-weight-bold  text-center rounded\"  href=\"";
-        // line 28
+        // line 42
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_account_order");
         echo "\" >
         <div class=\"account-item\">
             <img src=\"";
-        // line 30
+        // line 44
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/icons7.png"), "html", null, true);
         echo "\" alt=\"mes commandes\"><br>
             <span class=\"text-light\">Mes commandes</span>
         </div>
     </a>
         <a class=\"col-md-2 bg-info bg-gradient p-3 m-2 font-weight-bold  text-center rounded\"  href=\"";
-        // line 34
+        // line 48
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_let_comment");
         echo "\" >
         <div class=\"account-item\">
             <img src=\"";
-        // line 36
+        // line 50
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/iconComment.png"), "html", null, true);
         echo "\" alt=\"mes commentaires\"><br>
             <span class=\"text-light\">Laissez-nous un commentaire</span>
@@ -122,6 +146,7 @@ class __TwigTemplate_32e5f974817b982bf192e41702357795 extends Template
     </a>
 </div>
 <hr>
+
 ";
     }
 
@@ -137,7 +162,7 @@ class __TwigTemplate_32e5f974817b982bf192e41702357795 extends Template
 
     public function getDebugInfo()
     {
-        return array (  118 => 36,  113 => 34,  106 => 30,  101 => 28,  94 => 24,  89 => 22,  82 => 18,  77 => 16,  69 => 12,  63 => 8,  61 => 7,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  142 => 50,  137 => 48,  130 => 44,  125 => 42,  118 => 38,  113 => 36,  106 => 32,  101 => 30,  96 => 27,  87 => 21,  82 => 19,  75 => 15,  69 => 11,  67 => 10,  62 => 8,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()

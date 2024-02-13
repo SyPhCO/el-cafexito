@@ -1,100 +1,84 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}El Cafexito - Produits
-{% endblock %}
+{% block title %}El Cafexito - Produits{% endblock %}
 
 {% block content %}
-	<hr>
-	<h1 class="text-center mt-5">Produits
-	</h1>
 
-	{% for product in products %}
-		
-		<div class="productBlock container border">
-			<div class="row">
-				<h1 class="col-12 text-center mb-3 mt-5">{{ product.name }}</h1>
-				<div class="col-md-4">
-					<a href="{{ path('app_product', { 'slug' : product.slug }) }}">
-						<img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" loading="lazy" class="img-thumbnail rounded" width="400" height="400" data-lightbox="imgGLR">
-					</a>
-				</div>
-				<div class="col-md-8 font-weight-bold text-center d-flex m-auto " height="400">{{ product.description }}</div>
+<h1 class="text-center mt-5">Produits</h1>
 
-				<hr class="mt-2 mb-2">
+{% for product in products %}
 
-				<div class="col-md-4 d-flex m-auto d-flex justify-content-center ">
-					<div class="product-price font-weight-bold  ">
-						{{ (product.price / 100)|number_format(2, ',', '.') }}
-						€
-					</div>
-				</div>
-				<div class="col-md-8 text-center">
-					<span class="product-subtitle ">{{ product.subtitle }}</span>
-					<br>
-					<a href="{{ path('app_product', { 'slug' : product.slug }) }}" class="btn btn-info text-center font-weight-bold mt-2">Laissez vous tenter</a>
-				</div><hr class="hrP">
-			</div>
-			
-			<div id="diapo">
+    <hr class="bg-light mt-5 mb-5">
+    <div class="row d-flex flex-row justify-content-center">
 
-				<div>
-					<input type="radio" id="check1-{{ product.id }}" name="check" class="r_check" checked="checked">
-					<label for="check1-{{ product.id }}" class="on_check">
-						<img class="vignette active" src="/uploads/{{ product.gallery }}" alt="Vignette descrivant le produit" loading="lazy">
-					</label>
-					<img class="big_image active" src="/uploads/{{ product.gallery }}" alt="Vignette descrivant le produit grand format" loading="lazy"></div>
+        <div class="col-lg-8 col-sm-12 text-center">
+            <h1 class="col-12 mb-3 mt-5">{{ product.name }}</h1>
 
+            <div class="col-md-8 col-sm-12 mt-2 mb-2 mx-auto">
+                <a href="{{ path('app_product', { 'slug' : product.slug }) }}" class="">
+                    <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="imgProduct rounded">
+                </a>
+            </div>
+            <div class="font-weight-bold text-center d-flex m-auto ">{{ product.description }}</div>
 
-				<div>
-					<input type="radio" id="check2-{{ product.id }}" name="check" class="r_check">
-					<label for="check2-{{ product.id }}" class="on_check">
-						<img class="vignette" src="/uploads/{{ product.gallery2 }}" alt="Vignette descrivant le produit" loading="lazy">
-					</label>
-					<img class="big_image" src="/uploads/{{ product.gallery2 }}" alt="Vignette descrivant le produit grand format" loading="lazy"></div>
+            <hr class="mt-4 mb-4">
 
-				<div>
-					<input type="radio" id="check3-{{ product.id }}" name="check" class="r_check">
-					<label for="check3-{{ product.id }}" class="on_check">
-						<img class="vignette" src="/uploads/{{ product.gallery3 }}" alt="Vignette descrivant le produit" loading="lazy">
-					</label>
-					<img class="big_image" src="/uploads/{{ product.gallery3 }}" alt="Vignette descrivant le produit grand format" loading="lazy">
-				</div>
+            <div class="col-md-4 d-flex m-auto d-flex justify-content-center mt-2 ">
+                <div class="product-price font-weight-bold d-inline ">Tarif :
+                    {{ (product.price / 100)|number_format(2, ',', '.') }}
+                    €
+                </div>
+            </div>
+            <div class="col-lg-8 text-center mt-2">
+                <span class="product-subtitle ">{{ product.subtitle }}</span>
+                <br>
+                <a href="{{ path('app_product', { 'slug' : product.slug }) }}" class="btn btn-info text-center font-weight-bold mt-2">Laissez-vous tenter</a>
+            </div>
+        </div>
 
-				<div>
-					<input type="radio" id="check4-{{ product.id }}" name="check" class="r_check">
-					<label for="check4-{{ product.id }}" class="on_check">
-						<img class="vignette" src="/uploads/{{ product.gallery4 }}" alt="Vignette descrivant le produit" loading="lazy">
-					</label>
-					<img class="big_image" src="/uploads/{{ product.gallery4 }}" alt="Vignette descrivant le produit grand format" loading="lazy">
-				</div>
+        <div class="col-lg-2 col-sm-6 col-6 text-center d-flex flex-column ">
+            <div class="mt-5">
+                <img src="/uploads/{{ product.gallery }}" alt="{{ product.name }}" class="img-fluid rounded">
+            </div>
+            <div class="mt-5">
+                <img src="/uploads/{{ product.gallery2 }}" alt="{{ product.name }}" class="img-fluid rounded">
+            </div>
+            <div class="mt-5">
+                <img src="/uploads/{{ product.gallery3 }}" alt="{{ product.name }}" class="img-fluid rounded">
+            </div>
+        </div>
 
-				<div>
-					<input type="radio" id="check5-{{ product.id }}" name="check" class="r_check">
-					<label for="check5-{{ product.id }}" class="on_check">
-						<img class="vignette" src="/uploads/{{ product.gallery5 }}" alt="Vignette descrivant le produit" loading="lazy">
-					</label>
-					<img class="big_image" src="/uploads/{{ product.gallery5 }}" alt="Vignette descrivant le produit grand format" loading="lazy">
-				</div>
-				
-			</div>
-<hr class="hrP">
-			<div class="d-flex flex-row row comments">
-			
-				{% for comments in commentsByProduct %}
-					{% if (comments[0] == product.id) %}
-						{% for comment in comments[1] %}
-								<div class="d-block col-md-4 col-sm-6 text-center" >
-									<h4 class="col-md-12 text-center fw-bolder " id="top-{{ product.id }}-top">{{comment[1].author}}</h4>
-									<div class="gallery-item col-md-12  d-block">
-										<img src="/uploads/comments/{{ comment[1].illustration }}" class="mb-2" alt="test3" loading="lazy">
-									</div>
-									<div class="col-10 d-block scrollbar" id="style-9">{{comment[1].comment}}</div>
-								</div>
-						{% endfor %}
-					{% endif %}
-				{% endfor %}
-			</div>
-		</div><hr class="text-light bold">
-	{% endfor %}
+        <div class="col-lg-2 col-sm-6 col-6 text-center d-flex flex-column">
+            <div class="mt-5">
+                <img src="/uploads/{{ product.gallery4 }}" alt="{{ product.name }}" class="img-fluid rounded">
+            </div>
+            <div class="mt-5">
+                <img src="/uploads/{{ product.gallery5 }}" alt="{{ product.name }}" class="img-fluid rounded">
+            </div>
+            <div class="mt-5 rounded">
+                <img src="/uploads/{{ product.gallery6 }}" alt="{{ product.name }}" class="img-fluid rounded">
+            </div>
+        </div>
+
+    <div class="d-flex row flex-wrap mt-5">
+        {% for comments in commentsByProduct %}
+            {% if comments[0] == product.id %}
+                {% for comment in comments[1] %}
+                    <div class="text-center  d-flex flex-wrap justify-content-center pb-4 mt-2">
+                        <div class="imgComment d-block col-sm-12 col-md-2">
+                            <img src="/uploads/comments/{{ comment[1].illustration }}" class="mb-4 mx-auto" alt="test3" loading="lazy">
+                        </div>
+                        <div class="col-md-10 justify-content-center col-sm-12">
+                        <h4 class="text-center fw-bolder" id="top-{{ product.id }}-top">{{ comment[1].author }}</h4>
+                        <p class="text-center mt-2">{{ comment[1].comment }}</p>
+                        </div>
+                    </div>
+                    <hr class="col-6 mx-auto bg-light">
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}
 
 {% endblock %}

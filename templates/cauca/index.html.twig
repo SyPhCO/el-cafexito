@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}El Cafexito - Région Cauca{% endblock %}
+
+{% block content %}
+
+<div class="text-center">
+    <h1 class="text-center">Région Cauca</h1>
+La Colombie détient aujourd’hui 32 départements, Cauca en fait partie. <br>
+
+La capitale est Popayan, surnommée la ville blanche (« ciudad blanca »).<br>
+
+Ce département compte environ 1 350 000 habitants et se situe au sud-ouest du pays. <br>
+
+Les montagnes occupent 80% du territoire, sa superficie est de 29 308 km². C’est ici que l’importante rivière Cauca prend naissance ainsi que Magdalena (plus grand fleuve de Colombie) Caquetá et Patía. <br>
+
+C’est aussi là-bas que se dresse le Massif colombien (partagé entre les départements du Cauca et du Huila). Le département est limitrophe avec Tolima, Huila, Caquetá, Putumayo, Nariño, Valle del Cauca et l’océan Pacifique. <br>
+</div>
+{% for slider in sliders %}
+<div class="slider">
+    <div class="slides">
+        <div class="slideSmall"><img src="/uploads/{{ slider.image1 }}" alt=""></div>
+        <div class="slideSmall"><img src="/uploads/{{ slider.image2 }}" alt=""></div>
+        <div class="slideSmall"><img src="/uploads/{{ slider.image3 }}" alt=""></div>
+        <div class="slideSmall"><img src="/uploads/{{ slider.image4 }}" alt=""></div>
+        <div class="slideSmall"><img src="/uploads/{{ slider.image5 }}" alt=""></div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

@@ -86,58 +86,64 @@ class __TwigTemplate_ca6bc86e1f00e9ccd3e43cebc46eb3a3 extends Template
 
         // line 6
         echo "
- 
     <h1>Me contacter</h1>
     <p>N'hésitez pas a prendre contact avec moi , pour tous renseignements </p>
 
         ";
-        // line 11
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "user", [], "any", false, false, false, 11)) {
-            // line 12
+        // line 10
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "user", [], "any", false, false, false, 10)) {
+            // line 11
             echo "            <div class=\"mb-3\">
                 Vous etes connecté sous le compte de ";
-            // line 13
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 13, $this->source); })()), "user", [], "any", false, false, false, 13), "userIdentifier", [], "any", false, false, false, 13), "html", null, true);
+            // line 12
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12), "userIdentifier", [], "any", false, false, false, 12), "html", null, true);
             echo ", <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Logout</a>
             </div>
         ";
         }
-        // line 16
+        // line 15
         echo "
     <div class=\"row mt-5 pt-5\">
         <div class=\"col-md-8\">";
-        // line 18
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), 'form');
+        // line 17
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), 'form');
         echo "</div>
             <div class=\"col-md-4\">
             <h1>El Cafexito</h1>
             <hr>
                 <ul class=\"list-unstyled mb-0\">
                     <li><img src=\"";
-        // line 23
+        // line 22
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/adress40.png"), "html", null, true);
         echo "\" alt=\"code postale\">
                         01700 NEYRON
                     </li> <br>
 
                     <li><img src=\"";
-        // line 27
+        // line 26
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/phone40.png"), "html", null, true);
         echo "\" alt=\"téléphone\">
                         07.67.22.11.84
                     </li> <br>
 
                     <li><img src=\"";
-        // line 31
+        // line 30
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/mail40.png"), "html", null, true);
         echo "\" alt=\"adresse mail\">
                         contact@elcafexito.fr
                     </li>
+                    <li>
+                    <img src=\"";
+        // line 34
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/carteVisite.jpg"), "html", null, true);
+        echo "\" alt=\"adresse mail\" class=\"img-fluid mt-4\">
+                    </li>
                 </ul>
         </div>
     </div>
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -159,7 +165,7 @@ class __TwigTemplate_ca6bc86e1f00e9ccd3e43cebc46eb3a3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  134 => 31,  127 => 27,  120 => 23,  112 => 18,  108 => 16,  100 => 13,  97 => 12,  95 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  140 => 34,  133 => 30,  126 => 26,  119 => 22,  111 => 17,  107 => 15,  99 => 12,  96 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -170,7 +176,6 @@ class __TwigTemplate_ca6bc86e1f00e9ccd3e43cebc46eb3a3 extends Template
 
 {% block content %}
 
- 
     <h1>Me contacter</h1>
     <p>N'hésitez pas a prendre contact avec moi , pour tous renseignements </p>
 
@@ -197,9 +202,13 @@ class __TwigTemplate_ca6bc86e1f00e9ccd3e43cebc46eb3a3 extends Template
                     <li><img src=\"{{ asset('assets/images/mail40.png') }}\" alt=\"adresse mail\">
                         contact@elcafexito.fr
                     </li>
+                    <li>
+                    <img src=\"{{ asset('assets/images/carteVisite.jpg') }}\" alt=\"adresse mail\" class=\"img-fluid mt-4\">
+                    </li>
                 </ul>
         </div>
     </div>
+
 {% endblock %}
 ", "contact/index.html.twig", "C:\\wamp64\\www\\el-cafexito\\templates\\contact\\index.html.twig");
     }

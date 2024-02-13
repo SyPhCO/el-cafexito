@@ -1,13 +1,13 @@
 .carousel {
     margin-bottom: 2rem;
-    height: 80vh;
+    height: 50vh;
+
 }
 .carousel-caption {
     bottom: 5rem;
     z-index: 10;
 }
 .carousel-caption p{
-    color: #fff !important ;
   font-weight: bold;
   text-shadow: 1px 1px 5px #070707;
 }
@@ -21,7 +21,7 @@
 }
 .carousel-item{
     background-size: cover;
-    height:100vh;
+    height:50vh;
     object-fit: cover !important;
 }
 .carousel-caption .header-content{
@@ -32,18 +32,13 @@
 .featurette-divider {
     margin: 5rem 0;
 }
-@media (min-width: 40em) {
-    .carousel-caption p {
-        margin-bottom: 1.25rem;
-        font-size: 1.25rem;
-        line-height: 1.4;
+
+
+@media (max-width: 1000px) {
+        .titleCar{
+        font-size: 2rem;
     }
-    .featurette-heading {
-        font-size: 50px;
-    }
-}
-@media (min-width: 62em) {
-    .featurette-heading {
-        margin-top: 7rem;
+    .textCar{
+        font-size: 0.8rem;
     }
 }

@@ -35,11 +35,12 @@ class __TwigTemplate_a5efa7d3d4399bc3b6595a0a80eb0c61 extends Template
         $macros = $this->macros;
         // line 1
         echo "<footer class=\"footer-custom mt-5\">
-\t<div class=\"mr-5\">&copy; 2022-2023 El cafexito
+\t<div class=\"mr-5 text-light\">&copy; 2022-2023 El cafexito
 \t</div>
 \t<a href=\"#\" class=\"mr-5 text-light\">mentions légales</a>
 </small>
-<a href=\"#\" class=\"float-right ml-5 text-light\">Back to top</a></footer>
+<a href=\"#\" class=\"float-right ml-5 text-light\">Haut de page</a>
+</footer>
 ";
     }
 

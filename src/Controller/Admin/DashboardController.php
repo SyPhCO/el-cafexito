@@ -4,16 +4,20 @@ namespace App\Controller\Admin;
 
 use App\Entity\Team;
 use App\Entity\User;
+use App\Entity\Movie;
 use App\Entity\Order;
 use App\Entity\Header;
+use App\Entity\Slider;
 use App\Entity\Carrier;
 use App\Entity\Gallery;
 use App\Entity\Product;
 use App\Entity\Category;
 use App\Entity\Comments;
+use App\Entity\LandingPage;
 use App\Controller\Admin\UserCrudController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
@@ -45,21 +49,41 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('El Cafexito');
+            ->setTitle('El Cafexito')
+            ->renderContentMaximized();
+            
     }
+public function configureCrud(): Crud
+{
+    return parent::configureCrud()
+    ->renderContentMaximized()
+    ->showEntityActionsInlined();
+}
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-user', User::class);
-        yield MenuItem::linkToCrud('Catégories', 'fas fa-list', Category::class);
-        yield MenuItem::linkToCrud('Produits', 'fas fa-tag', Product::class);
-        yield MenuItem::linkToCrud('Transporteur', 'fas fa-truck', Carrier::class);
-        yield MenuItem::linkToCrud('Commandes', 'fas fa-shopping-cart', Order::class);
-        yield MenuItem::linkToCrud('Caroussel', 'fa fa-image', Header::class);
-        yield MenuItem::linkToCrud('Galerie', 'fa fa-image', Gallery::class);
-        yield MenuItem::linkToCrud('Equipe', 'fa fa-person', Team::class);
-        yield MenuItem::linkToCrud('Commentaires', 'fa fa-check', Comments::class);
+        yield MenuItem::linkToUrl('Retour au site', 'fas fa-home', '/compte');
+        
+        yield MenuItem::subMenu('Café', 'fas fa-mug-hot')->setSubItems([
+            MenuItem::linkToCrud('Produits', 'fas fa-tag', Product::class),
+            MenuItem::linkToCrud('Gestion Commentaires', 'fa fa-comments', Comments::class)
+      ]);
+        yield MenuItem::subMenu('E-commerce', 'fas fa-shop')->setSubItems([
+              MenuItem::linkToCrud('Utilisateurs', 'fas fa-user', User::class),
+              MenuItem::linkToCrud('Catégories', 'fas fa-list', Category::class),
+              MenuItem::linkToCrud('Transporteur', 'fas fa-truck', Carrier::class),
+              MenuItem::linkToCrud('Commandes', 'fas fa-shopping-cart', Order::class)
+        ]);
+        yield MenuItem::subMenu('Front CMS', 'fas fa-pencil')->setSubItems([
+            MenuItem::linkToCrud('Caroussel', 'fa fa-repeat', Header::class),
+            MenuItem::linkToCrud('Galerie', 'fa fa-image', Gallery::class),
+            MenuItem::linkToCrud('Film', 'fa fa-video', Movie::class),
+            MenuItem::linkToCrud('Equipe', 'fa fa-person', Team::class),
+            MenuItem::linkToCrud('Slider', 'fa fa-sliders', Slider::class),
+            MenuItem::linkToCrud('Page d acceuil', 'fa fa-rocket', LandingPage::class),
+
+        ]);
+
 
 
 

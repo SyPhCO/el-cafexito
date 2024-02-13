@@ -1,0 +1,174 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Comptabilité{% endblock %}
+
+{% block content %}
+    <h1 class="text-center">Comptabilité</h1>
+
+   <!-- Formulaire -->
+    <button class="btn btn-success mt-5" type="button" data-toggle="collapse" data-target="#collapseForm" aria-expanded="false" aria-controls="collapseForm">
+        Afficher le formulaire pour ajouter une nouvelle commande manuellement
+    </button>
+    <div class="collapse" id="collapseForm">
+        <div class="row">
+            <div class="col-md-6">
+                {{ form_start(accountingForm) }}
+                <div> {{ form_row(accountingForm.fullname) }}</div>
+                <div> {{ form_row(accountingForm.product) }}</div>
+                <div> {{ form_row(accountingForm.quantity) }}</div>
+                <div> {{ form_row(accountingForm.saleDate) }}</div>
+            </div>
+            <div class="col-md-6">
+                <div> {{ form_row(accountingForm.total) }}</div>
+                <div> {{ form_row(accountingForm.carrier) }}</div>
+                <div> {{ form_row(accountingForm.carrierPrice) }}</div>
+                <div class="mt-5"> {{ form_row(accountingForm.submit) }}</div>
+                {{ form_end(accountingForm) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <!-- Colonne gauche -->
+        <div class="col-sm">
+            <h1 class="text-center text-light mt-5">Commande internet</h1>
+            {% if users is not empty %}
+                {% set sortedOrders = [] %}
+                {% for user in users %}
+                    {% set sortedOrders = sortedOrders|merge(user.orders) %}
+                {% endfor %}
+                {% set sortedOrders = sortedOrders|sort((a, b) => b.createdAt.timestamp - a.createdAt.timestamp) %}
+
+                {% set currentMonth = null %}
+                {% set totalMonthPrice = 0 %}
+                {% set currentUserFullName = null %}
+
+                {% for order in sortedOrders %}
+                    {% set orderMonth = order.createdAt|date('F Y') %}
+                    {% if currentMonth != orderMonth %}
+                        {% if currentMonth is not null %}
+                            <tr>
+                                <td colspan="2"><strong>Total du mois</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>{{ (totalMonthPrice / 100)|number_format(2, ',', '.') }} €</strong></td>
+                            </tr>
+                            </tbody>
+                            </table>
+                        {% endif %}
+                        <h2 class="mt-5  text-center">{{ orderMonth }}</h2>
+                        <table class="table table-hover bg-light">
+                            <thead>
+                                <tr>
+                                    <th>Acheteur</th>
+                                    <th>Date</th>
+                                    <th>Prix</th>
+                                    <th>Produits Achetés</th>
+                                    <th>Mode livraison</th>
+                                    <th>Tarif total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% set totalMonthPrice = 0 %}
+                                {% set currentUserFullName = null %}
+                            {% endif %}
+                            {% for orderDetail in order.orderDetails %}
+                                <tr>
+                                    <td>
+                                        {% if currentUserFullName != order.user.getFullName() %}
+                                            {{ order.user.getFullName() }}
+                                            {% set currentUserFullName = order.user.getFullName() %}
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ order.createdAt|date('d-m-Y') }}</td>
+                                    <td>{{ (orderDetail.total / 100)|number_format(2, ',', '.') }} €</td>
+                                    <td>{{ orderDetail.quantity }} X {{ orderDetail.product }}</td>
+                                    <td>{{ order.carriername }} - {{ (order.carrierprice / 100)|number_format(2, ',', '.') }} €</td>
+                                    {% set totalOrderPrice = orderDetail.total + order.carrierprice %}
+                                    <td>{{ (totalOrderPrice / 100)|number_format(2, ',', '.') }} €</td>
+                                </tr>
+                                {% set totalMonthPrice = totalMonthPrice + totalOrderPrice %}
+                            {% endfor %}
+                            {% set currentMonth = orderMonth %}
+                        {% endfor %}
+                        <tr>
+                            <td colspan="2"><strong>Total du mois</strong></td>
+                            <td colspan="3"></td>
+                            <td><strong>{{ (totalMonthPrice / 100)|number_format(2, ',', '.') }} €</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            {% else %}
+                <p>Aucune donnée à afficher.</p>
+            {% endif %}
+        </div>
+
+        <!-- Colonne droite  -->
+<div class="col-sm">
+    <h1 class="text-center text-light mt-5">Commande Manuelle</h1>
+
+    {% if manualOrders is not empty %}
+        {% set sortedManualOrders = manualOrders|sort((a, b) => b.saleDate.timestamp - a.saleDate.timestamp) %}
+        
+        {% set currentMonth = null %}
+        {% set totalMonthPrice = 0 %}
+        
+        {% for index, manualOrder in sortedManualOrders %}
+            {% set orderMonth = manualOrder.saleDate|date('F Y') %}
+            {% if currentMonth != orderMonth %}
+                {% if currentMonth is not null %}
+                    <tr>
+                        <td colspan="2"><strong>Total du mois</strong></td>
+                        <td colspan="3"></td>
+                        <td><strong>{{ (totalMonthPrice)|number_format(2, ',', '.') }} €</strong></td>
+                    </tr>
+                     </tbody>
+                            </table>
+                {% endif %}
+                <h2 class="mt-5 text-center">{{ orderMonth }}</h2>
+                <table class="table table-hover bg-light">
+                    <thead>
+                        <tr>
+                            <th>Acheteur</th>
+                            <th>Date</th>
+                            <th>Prix</th>
+                            <th>Produits Achetés</th>
+                            <th>Mode livraison</th>
+                            <th>Tarif total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% set totalMonthPrice = 0 %}
+                    {% endif %}
+                    <tr>
+                        <td>{{ manualOrder.fullname }}</td>
+                        <td>{{ manualOrder.saleDate|date('d-m-Y') }}</td>
+                        <td>{{ (manualOrder.total)|number_format(2, ',', '.') }} €</td>
+                        <td>{{ manualOrder.quantity }} X {{ manualOrder.product }}</td>
+                        <td>{{ manualOrder.carrier }}</td>
+                        <td>{{ (manualOrder.carrierPrice)|number_format(2, ',', '.') }} €</td>
+                    </tr>
+                    {% set totalMonthPrice = totalMonthPrice + manualOrder.total %}
+                {% set currentMonth = orderMonth %}
+            {% endfor %}
+            <tr>
+                <td colspan="2"><strong>Total du mois</strong></td>
+                <td colspan="3"></td>
+                <td><strong>{{ (totalMonthPrice)|number_format(2, ',', '.') }} €</strong></td>
+            </tr>
+        </tbody>
+    </table>
+    {% else %}
+        <p>Aucune donnée à afficher.</p>
+    {% endif %}
+</div>
+    </div>
+<!-- suppression de la class marginBlock pour avoir les tableaux les plus large possible -->
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var marginBlockElement = document.querySelector('.marginBlock');
+            if (marginBlockElement) {
+                marginBlockElement.classList.remove('marginBlock');
+            }
+        });
+    </script>
+{% endblock %}

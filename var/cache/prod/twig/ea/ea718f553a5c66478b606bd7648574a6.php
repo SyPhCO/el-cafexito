@@ -64,6 +64,7 @@ FORMULAIRE D INSCRIPTION
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? null), 'form');
         echo "
 
+
 ";
     }
 

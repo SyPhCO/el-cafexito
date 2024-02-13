@@ -56,7 +56,8 @@ class __TwigTemplate_54d17533fd7f33273c14bcbc9e1b7a74 extends Template
     {
         $macros = $this->macros;
         // line 7
-        echo "\t<div class=\"row\">
+        echo "
+\t<div class=\"row\">
 \t\t<h1 class=\"col-md-12 text-center mt-5 mb-3\">Nos Cafés</h1>
 \t\t<h3 class=\"col-md-12 text-center\">Variété Bourbon Rose</h3>
 \t\t<p class=\"col-md-12 text-center\"><br>Cette variété d’arabica est connue dans le monde entier et est extrêmement appréciée.<br><br>
@@ -67,7 +68,7 @@ class __TwigTemplate_54d17533fd7f33273c14bcbc9e1b7a74 extends Template
 \t\t<div class=\"col-md-2\">
 \t\t\t<h1 class=\"mt-5 mb-5 text-center\">Filtrer</h1>
 \t\t\t";
-        // line 17
+        // line 18
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? null), 'form');
         echo "
 \t\t</div>
@@ -77,7 +78,7 @@ class __TwigTemplate_54d17533fd7f33273c14bcbc9e1b7a74 extends Template
 \t\t\t\t</h1>
 \t\t\t\t<div class=\"row\">
 \t\t\t\t\t";
-        // line 24
+        // line 25
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["products"] ?? null));
         $context['loop'] = [
@@ -94,12 +95,12 @@ class __TwigTemplate_54d17533fd7f33273c14bcbc9e1b7a74 extends Template
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 25
+            // line 26
             echo "\t\t\t\t\t\t<div class=\"col-md-4\"  >
 \t\t\t\t\t\t\t";
-            // line 26
-            $this->loadTemplate("product/single_product.html.twig", "product/index.html.twig", 26)->display($context);
             // line 27
+            $this->loadTemplate("product/single_product.html.twig", "product/index.html.twig", 27)->display($context);
+            // line 28
             echo "\t\t\t\t\t\t</div>
 \t\t\t\t\t";
             ++$context['loop']['index0'];
@@ -114,7 +115,7 @@ class __TwigTemplate_54d17533fd7f33273c14bcbc9e1b7a74 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 29
+        // line 30
         echo "\t\t\t\t</div>
 \t\t\t</div>
 \t</div>
@@ -135,7 +136,7 @@ class __TwigTemplate_54d17533fd7f33273c14bcbc9e1b7a74 extends Template
 
     public function getDebugInfo()
     {
-        return array (  118 => 29,  103 => 27,  101 => 26,  98 => 25,  81 => 24,  71 => 17,  59 => 7,  55 => 6,  47 => 3,  36 => 1,);
+        return array (  119 => 30,  104 => 28,  102 => 27,  99 => 26,  82 => 25,  72 => 18,  59 => 7,  55 => 6,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()

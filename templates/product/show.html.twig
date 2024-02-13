@@ -3,34 +3,46 @@
 {% block title %}{{ product.name }}{% endblock %}
 
 {% block content %}
-
+<div class="container">
     <div class="row mt-5">
-        <div class="col-md-5 mt-5">
-            <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="img-fluid">
+    <h1 class="col-12 text-center">{{ product.name}}</h1>
+        <div class="col-md-5 mt-5 text-center ">
+            <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="img-fluid col-8 rounded">
         </div>
         <div class="col-md-7 my-auto">
-            <h1>{{ product.name}}</h1>
+            
             <p>{{ product.subtitle }}</p>
             <span class="product-price font-weight-bold"> {{ (product.price / 100)|number_format(2, ',', '.') }} €</span>
             <hr>
             <p>{{ product.description }} </p>
+            {% if product.category|length > 0 %}
+                <p>Categories:
+                    {% for category in product.category %}
+                        {{ category.name }}
+                        {% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+            {% endif %}
             <a href="{{ path('app_add_to_cart', {'id' : product.id }) }}" class="btn btn-primary">Ajouter au panier</a>
+
         </div>
 
     </div>
     <hr>
     <div class="row">
-    <h3 class=" col-md-12">Jetez un oeil sur nos produits à la Une ! </h3>
+    <h3 class=" col-md-12 text-center">Jetez un oeil sur nos produits à la Une ! </h3>
       {% for product in products %}
         <div class="col-md-4">
           <div class="product-item text-center ">
-                        <a href="{{ path('app_product', { 'slug' : product.slug }) }}"><img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="figure-img img-fluid img-thumbnail" style="width: 10rem; height: 10rem"></a>
+                        <a href="{{ path('app_product', { 'slug' : product.slug }) }}"><img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="smallCircle"></a>
                         <h4>{{ product.name }}</h4>
-                        <span class="product-subtitle">{{ product.subtitle }}</span>
+                                   {% if product.category|length > 0 %}
+                <p> {{ product.category[0].name }}</p>
+            {% endif %}
           </div>
         </div>
       {% endfor %}
     </div>
-
+</div>
 {% endblock %}
 

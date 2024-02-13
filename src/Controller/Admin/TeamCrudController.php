@@ -7,6 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
@@ -28,8 +29,8 @@ class TeamCrudController extends AbstractCrudController
             ->setBasePath('uploads/')
             ->setUploadDir('public/uploads')
             ->setUploadedFileNamePattern('[randomhash].[extension]')
-            ->setRequired(false), 
-            TextEditorField::new('description'),
+            ->setRequired(false),
+            TextareaField::new('description'),
             imageField::new('gallery')
             ->setBasePath('uploads/')
             ->setUploadDir('public/uploads')
@@ -49,7 +50,7 @@ class TeamCrudController extends AbstractCrudController
             ->setBasePath('uploads/')
             ->setUploadDir('public/uploads')
             ->setUploadedFileNamePattern('[randomhash].[extension]')
-            ->setRequired(false)
+            ->setRequired(false),
         ];
     }
 

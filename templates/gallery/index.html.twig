@@ -3,9 +3,11 @@
 {% block title %}Galerie{% endblock %}
 
 {% block content %}
-<h1 class="text-center p-5">GALERIE PHOTO</h1>
 
-<div class="container cont-gallery" id="gallery">
+<h1 class="text-center p-5">GALERIES</h1>
+<h1 class="text-center p-5">PHOTOS</h1>
+
+<div class=" cont-gallery" id="gallery">
 
     <div class="gallery">
         <ul class="gallery-item">
@@ -38,6 +40,18 @@
     </div>
 
 </div>
+	<h1 class="text-center m-5">VIDEOS</h1>
 
+
+{% for movie in movies %}    
+    <h2 class="fw-bold mt-5 text-center mb-4"> {{ movie.name }} </h2>
+    <p class="fw-bold m-2 text-center"> {{ movie.description }} </p>
+        <div class="video-container mb-5">
+            <video src="./uploads/files/{{ movie.video }}" controls preload="metadata" class="video">
+                <source src="./uploads/files/{{ movie.video }}" controls type="video/mp4"></source>
+        </video>
+    </div>
+    <hr>
+{% endfor %} 
 {% endblock %}
 

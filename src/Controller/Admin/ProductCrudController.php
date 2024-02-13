@@ -35,7 +35,7 @@ class ProductCrudController extends AbstractCrudController
             ->setRequired(false),
             TextField::new('subtitle', 'sous-titre')->hideOnIndex(),
             TextareaField::new('description'),
-            BooleanField::new('isBest', 'A la une'),
+            BooleanField::new('isBest', 'A la une')->renderAsSwitch(),
             MoneyField::new('price', 'Prix')->setCurrency('EUR'),
             AssociationField::new('category', 'Catégorie'),
             imageField::new('gallery')
@@ -67,7 +67,7 @@ class ProductCrudController extends AbstractCrudController
             ->setBasePath('uploads/')
             ->setUploadDir('public/uploads')
             ->setUploadedFileNamePattern('[randomhash].[extension]')
-            ->setRequired(false)
+            ->setRequired(false),
         ];
     }
     

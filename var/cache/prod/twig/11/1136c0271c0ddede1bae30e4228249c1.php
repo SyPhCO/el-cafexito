@@ -56,69 +56,76 @@ class __TwigTemplate_31aaa5c0eca8c20ba362812f7a532b7c extends Template
     {
         $macros = $this->macros;
         // line 5
-        echo "\t<h1 class=\"text-center mt-5\">Qui sommes-nous?</h1>
+        echo "
+\t<h1 class=\"text-center mt-5 mb-4\">Qui sommes-nous?</h1>
 \t";
-        // line 6
+        // line 7
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["teams"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["team"]) {
-            // line 7
-            echo "\t\t<div class=\"row  justify-content-center\">
-\t\t\t<div class=\"col-md-12\">
-\t\t\t\t<h2 class=\"featurette-heading\">";
-            // line 9
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["team"], "name", [], "any", false, false, false, 9), "html", null, true);
+            // line 8
+            echo "
+\t\t\t<div class=\"col-12 row team-block\">
+\t\t\t\t<img src=\"/uploads/";
+            // line 10
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["team"], "illustration", [], "any", false, false, false, 10), "html", null, true);
+            echo "\" class=\"mb-2 team-picture\" alt=\"Photo ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["team"], "name", [], "any", false, false, false, 10), "html", null, true);
+            echo "\">
+\t\t\t\t<h2 class=\" m-auto\">";
+            // line 11
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["team"], "name", [], "any", false, false, false, 11), "html", null, true);
             echo "<br>
 \t\t\t\t\t<span class=\"text-muted\">";
-            // line 10
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["team"], "role", [], "any", false, false, false, 10), "html", null, true);
+            // line 12
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["team"], "role", [], "any", false, false, false, 12), "html", null, true);
             echo "</span>
 \t\t\t\t</h2>
-\t\t\t\t<div class=\"container\">
-\t\t\t\t\t<div class=\"col-4 col-xs-12 \">
-\t\t\t\t\t\t<img src=\"/uploads/";
-            // line 14
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["team"], "illustration", [], "any", false, false, false, 14), "html", null, true);
-            echo "\" class=\"mb-2 cardgallery w-100\" alt=\"test\">
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-\t\t\t\t<p class=\"lead\">";
-            // line 17
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["team"], "description", [], "any", false, false, false, 17), "html", null, true);
+
+\t\t\t\t<p class=\"lead col-12\">";
+            // line 15
+            echo twig_nl2br(twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["team"], "description", [], "any", false, false, false, 15), "html", null, true));
             echo "</p>
+
+\t\t\t\t<img src=\"/uploads/";
+            // line 17
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["team"], "gallery", [], "any", false, false, false, 17), "html", null, true);
+            echo "\" class=\"mb-2  team-picture\" alt=\"Photo descriptive ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["team"], "name", [], "any", false, false, false, 17), "html", null, true);
+            echo " 1\">
+
+\t\t\t\t<img src=\"/uploads/";
+            // line 19
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["team"], "gallery2", [], "any", false, false, false, 19), "html", null, true);
+            echo "\" class=\"mb-2  team-picture\" alt=\"Photo descriptive ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["team"], "name", [], "any", false, false, false, 19), "html", null, true);
+            echo " 2\">
+
+\t\t\t\t<img src=\"/uploads/";
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["team"], "gallery3", [], "any", false, false, false, 21), "html", null, true);
+            echo "\" class=\"mb-2  team-picture\" alt=\"Photo descriptive ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["team"], "name", [], "any", false, false, false, 21), "html", null, true);
+            echo " 3\">
+
+\t\t\t\t<img src=\"/uploads/";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["team"], "gallery4", [], "any", false, false, false, 23), "html", null, true);
+            echo "\" class=\"mb-2  team-picture\" alt=\"Photo descriptive ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["team"], "name", [], "any", false, false, false, 23), "html", null, true);
+            echo " 4\">
 \t\t\t</div>
-\t\t\t<div class=\" container \">
-\t\t\t\t<div class=\"d-flex flex-row\">
-\t\t\t\t\t<div class=\"col-4 col-xs-12 d-block\">
-\t\t\t\t\t\t<img src=\"/uploads/";
-            // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["team"], "gallery", [], "any", false, false, false, 22), "html", null, true);
-            echo "\" class=\"mb-2 team-picture imgzoom\" alt=\"test\">
-\t\t\t\t\t</div>
 
-\t\t\t\t\t<div class=\"col-4 col-xs-12 d-block\">
-\t\t\t\t\t\t<img src=\"/uploads/";
-            // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["team"], "gallery2", [], "any", false, false, false, 26), "html", null, true);
-            echo "\" class=\"mb-2 team-picture imgzoom\" alt=\"test2\">
-\t\t\t\t\t</div>
+\t\t<hr class=\"mt-4 mb-4 bg-light\">
 
-\t\t\t\t\t<div class=\"col-4 col-xs-12 d-block\">
-\t\t\t\t\t\t<img src=\"/uploads/";
-            // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["team"], "gallery3", [], "any", false, false, false, 30), "html", null, true);
-            echo "\" class=\"mb-2 team-picture imgzoom\" alt=\"test3\">
-\t\t\t\t\t</div>
-
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t\t<hr class=\"featurette-divider\">
-\t\t</div>
 \t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['team'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 29
+        echo "
+";
     }
 
     public function getTemplateName()
@@ -133,7 +140,7 @@ class __TwigTemplate_31aaa5c0eca8c20ba362812f7a532b7c extends Template
 
     public function getDebugInfo()
     {
-        return array (  109 => 30,  102 => 26,  95 => 22,  87 => 17,  81 => 14,  74 => 10,  70 => 9,  66 => 7,  62 => 6,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
+        return array (  127 => 29,  113 => 23,  106 => 21,  99 => 19,  92 => 17,  87 => 15,  81 => 12,  77 => 11,  71 => 10,  67 => 8,  63 => 7,  59 => 5,  55 => 4,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()

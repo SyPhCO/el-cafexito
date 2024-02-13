@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Movie;
 use App\Entity\Gallery;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,9 +24,10 @@ class GalleryController extends AbstractController
     {
 
         $images = $this->entityManager->getRepository(Gallery::class)->findAll();
-
+        $movies = $this->entityManager->getRepository(Movie::class)->findAll();
         return $this->render('gallery/index.html.twig', [
             'images' => $images,
+            'movies' => $movies,
         ]);
     }
 }

@@ -85,9 +85,9 @@ class __TwigTemplate_dd1453ef9dea208e0edf055a893693a7 extends Template
 
         // line 5
         echo "
-\t<div class=\"row acceuilStart\">
-\t\t<h1 class=\"text-center col-md-12\">Produits a la Une !</h1>
-\t\t";
+<div class=\"row acceuilStart justify-content-center \">
+    <h1 class=\"text-center col-md-12\">Produits à la Une !</h1>
+    ";
         // line 8
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 8, $this->source); })()));
@@ -106,13 +106,13 @@ class __TwigTemplate_dd1453ef9dea208e0edf055a893693a7 extends Template
         }
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
             // line 9
-            echo "\t\t\t<div class=\"col-md-4 mt-5 \">
-\t\t\t\t";
+            echo "    <div class=\"col-md-4 mt-5 text-center justify-content-center\">
+        ";
             // line 10
             $this->loadTemplate("product/single_product.html.twig", "index.html.twig", 10)->display($context);
             // line 11
-            echo "\t\t\t</div>
-\t\t";
+            echo "    </div>
+    ";
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
             $context['loop']['first'] = false;
@@ -126,43 +126,111 @@ class __TwigTemplate_dd1453ef9dea208e0edf055a893693a7 extends Template
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 13
-        echo "\t</div>
+        echo "</div>
 
-\t<hr class=\"featurette-divider\">
-
-\t<div class=\"row featurette\">
-\t\t<div class=\"col-md-7\">
-\t\t\t<h2 class=\"featurette-heading\">Fabien.<br>
-\t\t\t\t<span class=\"text-muted\">Dirigeant</span>
-\t\t\t</h2>
-\t\t\t<p class=\"lead\">Je suis en lien direct avec un petit producteur local de ma famille qui cultive le café depuis des générations.</p>
-\t\t\t<a href=\"";
-        // line 23
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_team");
-        echo "\" class=\"btn btn-info text-center font-weight-bold mt-2 mb-3\">Plus d'infos ?</a>
-\t\t</div>
-\t\t<div class=\"col-md-5 \">
-\t\t\t<img class=\" bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded\" width=\"500\" height=\"500\" src=\"./assets/images/profilTeam.jpg\" preserveaspectratio=\"xMidYMid slice\" focusable=\"false\" role=\"img\" aria-label=\"Placeholder: 500x500\"></img>
-\t    </div>
-    </div>
-
-    <hr class=\"featurette-divider\">
-
-    <div class=\"row featurette\">
-        <div class=\"col-md-7 order-md-2\">
-            <h2 class=\"featurette-heading\">El Cauca<br>
-                <span class=\"text-muted\">Colombie</span>
-            </h2>
-            <p class=\"lead\">Le département de Cauca est situé au sud-ouest de la Colombie.C’est la région montagneuse où l’importante rivière Cauca prend naissance...</p>
-            <a href=\"#\" class=\"btn btn-info text-center font-weight-bold mt-2 mb-3\">Découvrez en plus</a>
-        </div>
-        <div class=\"col-md-5 order-md-1\">
-            <img class=\"bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto\" width=\"500\" height=\"500\" src=\"./assets/images/escudo.png\" preserveaspectratio=\"xMidYMid slice\" focusable=\"false\" role=\"img\" aria-label=\"Placeholder: 500x500\"></img>
-        </div>
-    </div>
-    
-    <hr class=\"featurette-divider\">
+<hr class=\"featurette-divider\">
+";
+        // line 16
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["landingPage"]) || array_key_exists("landingPage", $context) ? $context["landingPage"] : (function () { throw new RuntimeError('Variable "landingPage" does not exist.', 16, $this->source); })()));
+        $context['loop'] = [
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        ];
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
+        foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
+            // line 17
+            echo "<div class=\"row featurette\">
     ";
+            // line 18
+            if ((twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 18) % 2 == 0)) {
+                // line 19
+                echo "    <div class=\"col-md-5\">
+        <img class=\" img-fluid mx-auto rounded\" src=\"/uploads/";
+                // line 20
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "illustration", [], "any", false, false, false, 20), "html", null, true);
+                echo "\"></img>
+    </div>
+    <div class=\"col-md-7\">
+        <h2> ";
+                // line 23
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 23), "html", null, true);
+                echo "<br>
+            <span class=\"text-muted\">";
+                // line 24
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "subtitle", [], "any", false, false, false, 24), "html", null, true);
+                echo "</span>
+        </h2>
+        <p class=\"lead\">";
+                // line 26
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "content", [], "any", false, false, false, 26), "html", null, true);
+                echo "</p>
+        <a href=\"";
+                // line 27
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_team");
+                echo "\" class=\"btn btn-info text-center font-weight-bold mt-2 mb-3\">";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "btnTitle", [], "any", false, false, false, 27), "html", null, true);
+                echo "</a>
+    </div>
+    ";
+            } else {
+                // line 30
+                echo "    <div class=\"col-md-7\">
+        <h2> ";
+                // line 31
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 31), "html", null, true);
+                echo "<br>
+            <span class=\"text-muted\">";
+                // line 32
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "subtitle", [], "any", false, false, false, 32), "html", null, true);
+                echo "</span>
+        </h2>
+        <p class=\"lead\">";
+                // line 34
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "content", [], "any", false, false, false, 34), "html", null, true);
+                echo "</p>
+        <a href=\"";
+                // line 35
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_team");
+                echo "\" class=\"btn btn-info text-center font-weight-bold mt-2 mb-3\">";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "btnTitle", [], "any", false, false, false, 35), "html", null, true);
+                echo "</a>
+    </div>
+    <div class=\"col-md-5\">
+        <img class=\" img-fluid mx-auto rounded\" src=\"/uploads/";
+                // line 38
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "illustration", [], "any", false, false, false, 38), "html", null, true);
+                echo "\"></img>
+    </div>
+    ";
+            }
+            // line 41
+            echo "</div>
+<hr class=\"featurette-divider\">
+";
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['length'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 44
+        echo "
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -183,7 +251,7 @@ class __TwigTemplate_dd1453ef9dea208e0edf055a893693a7 extends Template
 
     public function getDebugInfo()
     {
-        return array (  141 => 23,  129 => 13,  114 => 11,  112 => 10,  109 => 9,  92 => 8,  87 => 5,  77 => 4,  59 => 2,  36 => 1,);
+        return array (  232 => 44,  216 => 41,  210 => 38,  202 => 35,  198 => 34,  193 => 32,  189 => 31,  186 => 30,  178 => 27,  174 => 26,  169 => 24,  165 => 23,  159 => 20,  156 => 19,  154 => 18,  151 => 17,  134 => 16,  129 => 13,  114 => 11,  112 => 10,  109 => 9,  92 => 8,  87 => 5,  77 => 4,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -193,47 +261,46 @@ class __TwigTemplate_dd1453ef9dea208e0edf055a893693a7 extends Template
 
 {% block content %}
 
-\t<div class=\"row acceuilStart\">
-\t\t<h1 class=\"text-center col-md-12\">Produits a la Une !</h1>
-\t\t{% for product in products %}
-\t\t\t<div class=\"col-md-4 mt-5 \">
-\t\t\t\t{% include 'product/single_product.html.twig' %}
-\t\t\t</div>
-\t\t{% endfor %}
-\t</div>
-
-\t<hr class=\"featurette-divider\">
-
-\t<div class=\"row featurette\">
-\t\t<div class=\"col-md-7\">
-\t\t\t<h2 class=\"featurette-heading\">Fabien.<br>
-\t\t\t\t<span class=\"text-muted\">Dirigeant</span>
-\t\t\t</h2>
-\t\t\t<p class=\"lead\">Je suis en lien direct avec un petit producteur local de ma famille qui cultive le café depuis des générations.</p>
-\t\t\t<a href=\"{{path('app_team')}}\" class=\"btn btn-info text-center font-weight-bold mt-2 mb-3\">Plus d'infos ?</a>
-\t\t</div>
-\t\t<div class=\"col-md-5 \">
-\t\t\t<img class=\" bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded\" width=\"500\" height=\"500\" src=\"./assets/images/profilTeam.jpg\" preserveaspectratio=\"xMidYMid slice\" focusable=\"false\" role=\"img\" aria-label=\"Placeholder: 500x500\"></img>
-\t    </div>
+<div class=\"row acceuilStart justify-content-center \">
+    <h1 class=\"text-center col-md-12\">Produits à la Une !</h1>
+    {% for product in products %}
+    <div class=\"col-md-4 mt-5 text-center justify-content-center\">
+        {% include 'product/single_product.html.twig' %}
     </div>
+    {% endfor %}
+</div>
 
-    <hr class=\"featurette-divider\">
-
-    <div class=\"row featurette\">
-        <div class=\"col-md-7 order-md-2\">
-            <h2 class=\"featurette-heading\">El Cauca<br>
-                <span class=\"text-muted\">Colombie</span>
-            </h2>
-            <p class=\"lead\">Le département de Cauca est situé au sud-ouest de la Colombie.C’est la région montagneuse où l’importante rivière Cauca prend naissance...</p>
-            <a href=\"#\" class=\"btn btn-info text-center font-weight-bold mt-2 mb-3\">Découvrez en plus</a>
-        </div>
-        <div class=\"col-md-5 order-md-1\">
-            <img class=\"bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto\" width=\"500\" height=\"500\" src=\"./assets/images/escudo.png\" preserveaspectratio=\"xMidYMid slice\" focusable=\"false\" role=\"img\" aria-label=\"Placeholder: 500x500\"></img>
-        </div>
+<hr class=\"featurette-divider\">
+{% for article in landingPage %}
+<div class=\"row featurette\">
+    {% if loop.index is even %}
+    <div class=\"col-md-5\">
+        <img class=\" img-fluid mx-auto rounded\" src=\"/uploads/{{ article.illustration }}\"></img>
     </div>
-    
-    <hr class=\"featurette-divider\">
-    {% endblock %}
+    <div class=\"col-md-7\">
+        <h2> {{ article.title }}<br>
+            <span class=\"text-muted\">{{ article.subtitle }}</span>
+        </h2>
+        <p class=\"lead\">{{ article.content }}</p>
+        <a href=\"{{ path('app_team') }}\" class=\"btn btn-info text-center font-weight-bold mt-2 mb-3\">{{ article.btnTitle }}</a>
+    </div>
+    {% else %}
+    <div class=\"col-md-7\">
+        <h2> {{ article.title }}<br>
+            <span class=\"text-muted\">{{ article.subtitle }}</span>
+        </h2>
+        <p class=\"lead\">{{ article.content }}</p>
+        <a href=\"{{ path('app_team') }}\" class=\"btn btn-info text-center font-weight-bold mt-2 mb-3\">{{ article.btnTitle }}</a>
+    </div>
+    <div class=\"col-md-5\">
+        <img class=\" img-fluid mx-auto rounded\" src=\"/uploads/{{ article.illustration }}\"></img>
+    </div>
+    {% endif %}
+</div>
+<hr class=\"featurette-divider\">
+{% endfor %}
+
+{% endblock %}
 ", "index.html.twig", "C:\\wamp64\\www\\el-cafexito\\templates\\index.html.twig");
     }
 }

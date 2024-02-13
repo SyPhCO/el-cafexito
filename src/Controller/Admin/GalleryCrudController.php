@@ -22,6 +22,7 @@ class GalleryCrudController extends AbstractCrudController
             ->setUploadDir('public/uploads')
             ->setUploadedFileNamePattern('[randomhash].[extension]')
             ->setRequired(false),
+
             ImageField::new('image2')
             ->setBasePath('uploads/')
             ->setUploadDir('public/uploads')
@@ -31,7 +32,7 @@ class GalleryCrudController extends AbstractCrudController
             ->setBasePath('uploads/')
             ->setUploadDir('public/uploads')
             ->setUploadedFileNamePattern('[randomhash].[extension]')
-            ->setRequired(false)
+            ->setRequired(false),
         ];
     }
     

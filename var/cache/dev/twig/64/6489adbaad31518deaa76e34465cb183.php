@@ -86,7 +86,8 @@ class __TwigTemplate_2fd38515b90ed9e5d081faea3a74a5f5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 7
-        echo "\t<div class=\"row\">
+        echo "
+\t<div class=\"row\">
 \t\t<h1 class=\"col-md-12 text-center mt-5 mb-3\">Nos Cafés</h1>
 \t\t<h3 class=\"col-md-12 text-center\">Variété Bourbon Rose</h3>
 \t\t<p class=\"col-md-12 text-center\"><br>Cette variété d’arabica est connue dans le monde entier et est extrêmement appréciée.<br><br>
@@ -97,8 +98,8 @@ class __TwigTemplate_2fd38515b90ed9e5d081faea3a74a5f5 extends Template
 \t\t<div class=\"col-md-2\">
 \t\t\t<h1 class=\"mt-5 mb-5 text-center\">Filtrer</h1>
 \t\t\t";
-        // line 17
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), 'form');
+        // line 18
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), 'form');
         echo "
 \t\t</div>
 
@@ -107,9 +108,9 @@ class __TwigTemplate_2fd38515b90ed9e5d081faea3a74a5f5 extends Template
 \t\t\t\t</h1>
 \t\t\t\t<div class=\"row\">
 \t\t\t\t\t";
-        // line 24
+        // line 25
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 24, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 25, $this->source); })()));
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -124,12 +125,12 @@ class __TwigTemplate_2fd38515b90ed9e5d081faea3a74a5f5 extends Template
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 25
+            // line 26
             echo "\t\t\t\t\t\t<div class=\"col-md-4\"  >
 \t\t\t\t\t\t\t";
-            // line 26
-            $this->loadTemplate("product/single_product.html.twig", "product/index.html.twig", 26)->display($context);
             // line 27
+            $this->loadTemplate("product/single_product.html.twig", "product/index.html.twig", 27)->display($context);
+            // line 28
             echo "\t\t\t\t\t\t</div>
 \t\t\t\t\t";
             ++$context['loop']['index0'];
@@ -144,7 +145,7 @@ class __TwigTemplate_2fd38515b90ed9e5d081faea3a74a5f5 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 29
+        // line 30
         echo "\t\t\t\t</div>
 \t\t\t</div>
 \t</div>
@@ -171,7 +172,7 @@ class __TwigTemplate_2fd38515b90ed9e5d081faea3a74a5f5 extends Template
 
     public function getDebugInfo()
     {
-        return array (  148 => 29,  133 => 27,  131 => 26,  128 => 25,  111 => 24,  101 => 17,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  149 => 30,  134 => 28,  132 => 27,  129 => 26,  112 => 25,  102 => 18,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -182,6 +183,7 @@ class __TwigTemplate_2fd38515b90ed9e5d081faea3a74a5f5 extends Template
 {% endblock %}
 
 {% block content %}
+
 \t<div class=\"row\">
 \t\t<h1 class=\"col-md-12 text-center mt-5 mb-3\">Nos Cafés</h1>
 \t\t<h3 class=\"col-md-12 text-center\">Variété Bourbon Rose</h3>

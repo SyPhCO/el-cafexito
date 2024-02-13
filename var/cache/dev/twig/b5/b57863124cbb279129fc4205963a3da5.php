@@ -82,6 +82,7 @@ FORMULAIRE D INSCRIPTION
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 11, $this->source); })()), 'form');
         echo "
 
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -119,6 +120,7 @@ FORMULAIRE D INSCRIPTION
     <hr>
 {% endif %}
 {{ form(form) }}
+
 
 {% endblock %} 
 ", "register/index.html.twig", "C:\\wamp64\\www\\el-cafexito\\templates\\register\\index.html.twig");

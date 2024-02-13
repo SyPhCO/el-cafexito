@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Header;
+use App\Entity\LandingPage;
 use App\Entity\Product;
+// use App\Entity\Movie;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -25,13 +27,14 @@ class HomeController extends AbstractController
 
         $products = $this->entityManager->getRepository(Product::class)->findByIsBest(1);
         $headers = $this->entityManager->getRepository(Header::class)->findAll();
-        // $images = $this->entityManager->getRepository(GalleryLanding::class)->findAll();
-
+        $article = $this->entityManager->getRepository(LandingPage::class)->findAll();
+        // $movies = $this->entityManager->getRepository(Movie::class)->findByIsBest(1)   à rajouter si fabien veut mettre une vidéo promo sur la page d'acceuil 
 
         return $this->render('home/index.html.twig', [
             'products' => $products,
             'headers' => $headers,
-            // 'images' => $images
+            'landingPage' => $article
+            // 'movies' => $movies
         ]);
     }
 }
