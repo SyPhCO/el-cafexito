@@ -31,7 +31,7 @@
     <div class="row mt-5">
         <!-- Colonne gauche -->
         <div class="col-sm">
-            <h1 class="text-center text-light mt-5">Commande internet</h1>
+            <h2 class="text-center text-light mt-5">Commande internet</h2>
             {% if users is not empty %}
                 {% set sortedOrders = [] %}
                 {% for user in users %}
@@ -55,7 +55,7 @@
                             </tbody>
                             </table>
                         {% endif %}
-                        <h2 class="mt-5  text-center">{{ orderMonth }}</h2>
+                        <h4 class="mt-5  text-center">{{ orderMonth }}</h4>
                         <table class="table table-hover bg-light">
                         <caption>Commandes internet</caption>
                             <thead>
@@ -105,7 +105,7 @@
 
         <!-- Colonne droite  -->
 <div class="col-sm">
-    <h1 class="text-center text-light mt-5">Commande Manuelle</h1>
+    <h2 class="text-center text-light mt-5">Commande Manuelle</h2>
 
     {% if manualOrders is not empty %}
         {% set sortedManualOrders = manualOrders|sort((a, b) => b.saleDate.timestamp - a.saleDate.timestamp) %}
@@ -125,7 +125,7 @@
                      </tbody>
                             </table>
                 {% endif %}
-                <h2 class="mt-5 text-center">{{ orderMonth }}</h2>
+                <h4 class="mt-5 text-center">{{ orderMonth }}</h4>
                 <table class="table table-hover bg-light">
                         <caption>Commandes manuelle</caption>
                     <thead>

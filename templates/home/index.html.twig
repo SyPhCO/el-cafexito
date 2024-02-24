@@ -2,9 +2,9 @@
 {% block carousel %}{% endblock %}
 
 {% block content %}
-
+<h1 class="text-center mt-5 mb-5">Acceuil</h1>
 <div class="row acceuilStart justify-content-center ">
-    <h1 class="text-center col-md-12">Produits à la Une !</h1>
+    <h3 class="text-center col-md-12">Produits à la Une !</h3>
     {% for product in products %}
     <div class="col-md-4 mt-5 text-center justify-content-center">
         {% include 'product/single_product.html.twig' %}
