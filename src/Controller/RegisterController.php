@@ -2,7 +2,6 @@
  
  namespace App\Controller;
 
-use App\Classe\Mail;
  use App\Form\RegisterType;
  use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  use Doctrine\ORM\EntityManagerInterface;
@@ -40,10 +39,6 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
                 $notification = "Votre inscription s'est correctement déroulé. Vous pouvez dès à présent vous connecter à votre compte.";
 
-                
-                // $mail = new Mail();
-                // $content = "Bonjour".$user->getFirstname()."Vous pouvez dès a présent acceder a votre espace membre.";
-                // $mail->send($user->getEmail(), $user->getFirstname(), 'Bienvenue El-Cafexito', $content);
             }else{
                 $notification = "L'Email que vous avez renseignez éxiste déjà.";
             }

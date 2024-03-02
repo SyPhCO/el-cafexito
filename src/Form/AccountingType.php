@@ -45,7 +45,7 @@ class AccountingType extends AbstractType
             'label' => 'Date de la vente',
             'widget' => 'single_text',
             'html5' => true,
-            'format' => 'yyyy-MM-dd', // Format de la date
+            'format' => 'yyyy-MM-dd', 
             'label_attr' => ['class' => 'font-weight-bold'],
             'attr' => [
                 'class' => 'font-weight-bold',

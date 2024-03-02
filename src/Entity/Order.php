@@ -145,7 +145,7 @@ class Order
     public function removeOrderDetail(OrderDetails $orderDetail): self
     {
         if ($this->orderDetails->removeElement($orderDetail)) {
-            // set the owning side to null (unless already changed)
+
             if ($orderDetail->getMyOrder() === $this) {
                 $orderDetail->setMyOrder(null);
             }

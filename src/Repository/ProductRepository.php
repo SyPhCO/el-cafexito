@@ -41,25 +41,24 @@ class ProductRepository extends ServiceEntityRepository
     }
 
     /**
-     * Requete qui recupère mes produits en focntion des catégories
      * @return Product[]
      */
     public function findWithSearch (Search $search)
     {
-        $query = $this
-        ->createQueryBuilder('p')
-        ->select('c', 'p')
-        ->join('p.category', 'c');
+        $query = $this                              
+        ->createQueryBuilder('p')    // SELECT c.*, p.*
+        ->select('c', 'p')           // FROM Product p
+        ->join('p.category', 'c');   // JOIN Category c ON p.category_id = c.id;
 
         if(!empty($search->categories)){
             $query = $query
             ->andWhere('c.id IN (:categories)')
             ->setParameter('categories', $search->categories);
         }
-        if(!empty($search->string)){
+        if (!empty($search->string)) {
             $query = $query
-            ->andWhere('p.name LIKE :string')
-            ->setParameter('string', "%{$search->string}%" );
+                ->andWhere('p.name LIKE :searchString OR p.description LIKE :searchString') // WHERE (p.name LIKE :searchString OR p.description LIKE :searchString)
+                ->setParameter('searchString', "%{$search->string}%");
         }
         return $query->getQuery()->getResult();
     }

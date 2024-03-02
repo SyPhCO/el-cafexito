@@ -25,7 +25,9 @@ class AccountingController extends AbstractController
     public function index(Request $request): Response
     {
         $users = $this->entityManager->getRepository(User::class)->findAll();
-        $orders = $this->entityManager->getRepository(Order::class)->findByUser($users);
+        // $orders = $this->entityManager->getRepository(Order::class)->findByUser($users);
+        $orders = $this->entityManager->getRepository(Order::class)->findAll();
+
         $manualOrders = $this->entityManager->getRepository(Accounting::class)->findAll();
         $accounting = new Accounting();
 

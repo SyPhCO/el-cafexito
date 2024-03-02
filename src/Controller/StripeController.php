@@ -60,7 +60,7 @@ class StripeController extends AbstractController
             
         $checkout_session = Session::create([
             'customer_email' => $this->getUser()->getEmail(),
-            'line_items' => [$products_for_stripe],
+            'line_items' => $products_for_stripe,
             'payment_method_types' => [
                 'card',
             ],

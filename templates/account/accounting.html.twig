@@ -5,7 +5,7 @@
 {% block content %}
     <h1 class="text-center">Comptabilité</h1>
 
-   <!-- Formulaire -->
+    <!-- Formulaire d'entrée manuelle -->
     <button class="btn btn-success mt-5" type="button" data-toggle="collapse" data-target="#collapseForm" aria-expanded="false" aria-controls="collapseForm">
         Afficher le formulaire pour ajouter une nouvelle commande manuellement
     </button>
@@ -29,7 +29,7 @@
     </div>
 
     <div class="row mt-5">
-        <!-- Colonne gauche -->
+        <!-- Colonne gauche internet -->
         <div class="col-sm">
             <h2 class="text-center text-light mt-5">Commande internet</h2>
             {% if users is not empty %}
@@ -57,13 +57,14 @@
                         {% endif %}
                         <h4 class="mt-5  text-center">{{ orderMonth }}</h4>
                         <table class="table table-hover bg-light">
-                        <caption>Commandes internet</caption>
+
                             <thead>
                                 <tr>
                                     <th>Acheteur</th>
                                     <th>Date</th>
                                     <th>Prix</th>
                                     <th>Produits Achetés</th>
+                                    <th>ID</th>
                                     <th>Mode livraison</th>
                                     <th>Tarif total</th>
                                 </tr>
@@ -72,6 +73,7 @@
                                 {% set totalMonthPrice = 0 %}
                                 {% set currentUserFullName = null %}
                             {% endif %}
+                            {% set previous_order_id = null %}
                             {% for orderDetail in order.orderDetails %}
                                 <tr>
                                     <td>
@@ -80,14 +82,28 @@
                                             {% set currentUserFullName = order.user.getFullName() %}
                                         {% endif %}
                                     </td>
-                                    <td>{{ order.createdAt|date('d-m-Y') }}</td>
+                                    <td>
+                                        {% if loop.first or order.id != previous_order_id %}
+                                            {{ order.createdAt|date('d-m-Y') }}
+                                        {% endif %}
+                                    </td>
                                     <td>{{ (orderDetail.total / 100)|number_format(2, ',', '.') }} €</td>
                                     <td>{{ orderDetail.quantity }} X {{ orderDetail.product }}</td>
-                                    <td>{{ order.carriername }} - {{ (order.carrierprice / 100)|number_format(2, ',', '.') }} €</td>
-                                    {% set totalOrderPrice = orderDetail.total + order.carrierprice %}
-                                    <td>{{ (totalOrderPrice / 100)|number_format(2, ',', '.') }} €</td>
+                                    <td>{{ order.id }}</td>
+                                    <td>
+                                        {% if loop.first or order.id != previous_order_id %}
+                                            {{ order.carriername }} - {{ (order.carrierprice / 100)|number_format(2, ',', '.') }} €
+                                        {% endif %}
+                                    </td>
+                                    {% set totalOrderPrice = orderDetail.total * orderDetail.quantity + order.carrierprice %}
+                                    {% if loop.first or order.id != previous_order_id %}
+                                        <td>{{ (totalOrderPrice / 100)|number_format(2, ',', '.') }} €</td>
+                                    {% else %}
+                                        <td></td>
+                                    {% endif %}
                                 </tr>
                                 {% set totalMonthPrice = totalMonthPrice + totalOrderPrice %}
+                                {% set previous_order_id = order.id %}
                             {% endfor %}
                             {% set currentMonth = orderMonth %}
                         {% endfor %}
@@ -103,10 +119,9 @@
             {% endif %}
         </div>
 
-        <!-- Colonne droite  -->
+<!-- Colonne droite manuelle -->
 <div class="col-sm">
     <h2 class="text-center text-light mt-5">Commande Manuelle</h2>
-
     {% if manualOrders is not empty %}
         {% set sortedManualOrders = manualOrders|sort((a, b) => b.saleDate.timestamp - a.saleDate.timestamp) %}
         
@@ -119,58 +134,59 @@
                 {% if currentMonth is not null %}
                     <tr>
                         <td colspan="2"><strong>Total du mois</strong></td>
-                        <td colspan="3"></td>
+                        <td colspan="2"></td>
                         <td><strong>{{ (totalMonthPrice)|number_format(2, ',', '.') }} €</strong></td>
                     </tr>
-                     </tbody>
-                            </table>
+                    </tbody>
+                    </table>
                 {% endif %}
-                <h4 class="mt-5 text-center">{{ orderMonth }}</h4>
+                <h4 class="mt-5 text-center">{{ orderMonth }}</h4> {# Déplacer le titre ici #}
                 <table class="table table-hover bg-light">
-                        <caption>Commandes manuelle</caption>
                     <thead>
                         <tr>
                             <th>Acheteur</th>
                             <th>Date</th>
-                            <th>Prix</th>
+                            {# <th>Prix</th> #}
                             <th>Produits Achetés</th>
                             <th>Mode livraison</th>
                             <th>Tarif total</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% set totalMonthPrice = 0 %}
-                    {% endif %}
-                    <tr>
-                        <td>{{ manualOrder.fullname }}</td>
-                        <td>{{ manualOrder.saleDate|date('d-m-Y') }}</td>
-                        <td>{{ (manualOrder.total)|number_format(2, ',', '.') }} €</td>
-                        <td>{{ manualOrder.quantity }} X {{ manualOrder.product }}</td>
-                        <td>{{ manualOrder.carrier }}</td>
-                        <td>{{ (manualOrder.carrierPrice)|number_format(2, ',', '.') }} €</td>
-                    </tr>
-                    {% set totalMonthPrice = totalMonthPrice + manualOrder.total %}
-                {% set currentMonth = orderMonth %}
-            {% endfor %}
+                    {% set currentMonth = orderMonth %} {# Mettre à jour le mois actuel #}
+            {% endif %}
+            <tr>
+                <td>{{ manualOrder.fullname }}</td>
+                <td>{{ manualOrder.saleDate|date('d-m-Y') }}</td>
+                {# <td>{{ (manualOrder.total)|number_format(2, ',', '.') }} €</td> #}
+                <td>{{ manualOrder.quantity }} X {{ manualOrder.product }}</td>
+                <td>{{ manualOrder.carrier }} - {{ (manualOrder.carrierPrice)|number_format(2, ',', '.') }} €</td>
+                <td>{{ (manualOrder.total + manualOrder.carrierPrice)|number_format(2, ',', '.') }} €</td>
+            </tr>
+            {% set totalMonthPrice = totalMonthPrice + manualOrder.total  + manualOrder.carrierPrice %}
+        {% endfor %}
+        {# Total du dernier mois #}
+        {% if currentMonth is not null %}
             <tr>
                 <td colspan="2"><strong>Total du mois</strong></td>
-                <td colspan="3"></td>
+                <td colspan="2"></td>
                 <td><strong>{{ (totalMonthPrice)|number_format(2, ',', '.') }} €</strong></td>
             </tr>
-        </tbody>
-    </table>
+        {% endif %}
+            </tbody>
+        </table>
     {% else %}
         <p>Aucune donnée à afficher.</p>
     {% endif %}
 </div>
     </div>
-<!-- suppression de la class marginBlock pour avoir les tableaux les plus large possible -->
-        <script>
+
+    <script>
         document.addEventListener("DOMContentLoaded", function() {
-            var marginBlockElement = document.querySelector('.marginBlock');
-            if (marginBlockElement) {
-                marginBlockElement.classList.remove('marginBlock');
-            }
+            const marginBlockElement = document.querySelector('.marginBlock');
+            const socialElement = document.querySelector('.social');
+            marginBlockElement.classList.remove('marginBlock');
+            socialElement.remove();
         });
     </script>
 {% endblock %}
